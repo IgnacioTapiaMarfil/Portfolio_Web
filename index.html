@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio de Ignacio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- CSS separadas -->
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/desktop.css">
+  <link rel="stylesheet" href="css/window.css">
+</head>
+
+<body>
+  <div class = "desktop">
+    <div class = "icon" id="portfolio_icon" onclick = "open_window('portfolio_window')">
+        <img src="resources/Portfolio_photo.png">
+        <span>About me</span>
+    </div> 
+
+    <div class="taskbar">
+        <div class="start-button">
+            <img src="resources/windows-95.png">
+            <span>Start</span>
+        </div>
+        <div class="taskbar-items">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="window" id="portfolio_window" style="display: none;">
+        <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
+            <span>&lt;NT&gt;</span>
+
+            <div class="close-button" onclick="close_window(this)">
+                <span>X</span>
+            </div>
+
+        </div>
+
+        <div class="window-content">
+          <div class="tabs-button">
+            <button onclick="showTab(0)">Pestaña 1</button>
+            <button onclick="showTab(1)">Pestaña 2</button>
+            <button onclick="showTab(2)">Pestaña 3</button>
+          </div>
+        
+          <div class="tab-content" id="tab0">
+            <div class="about-container">
+              <div class="about-photo">
+                <img src="resources/Portfolio_photo.png" alt="Foto de Ignacio" />
+              </div>
+              <div class="about-text">
+                  <p>
+                    ¡Hola! Soy Ignacio, desarrollador de videojuegos con pasión por la IA, sistemas complejos y diseño retro. Me encanta mezclar lo clásico con tecnología moderna. Aquí puedes ver mis proyectos, ideas y experimentos.
+                  </p>
+                  <p>
+                    Este portfolio simula un escritorio de Windows 95 para transmitir esa estética nostálgica, pero todo el sistema está hecho desde cero con HTML, CSS y JS puro.
+                  </p>
+                  <p>
+                    ¡Hola! Soy Ignacio, desarrollador de videojuegos con pasión por la IA, sistemas complejos y diseño retro. Me encanta mezclar lo clásico con tecnología moderna. Aquí puedes ver mis proyectos, ideas y experimentos.
+                  </p>
+                  <p>
+                    Este portfolio simula un escritorio de Windows 95 para transmitir esa estética nostálgica, pero todo el sistema está hecho desde cero con HTML, CSS y JS puro.
+                  </p>
+                  <p>
+                    ¡Hola! Soy Ignacio, desarrollador de videojuegos con pasión por la IA, sistemas complejos y diseño retro. Me encanta mezclar lo clásico con tecnología moderna. Aquí puedes ver mis proyectos, ideas y experimentos.
+                  </p>
+                  <p>
+                    Este portfolio simula un escritorio de Windows 95 para transmitir esa estética nostálgica, pero todo el sistema está hecho desde cero con HTML, CSS y JS puro.
+                  </p>
+                  <p>
+                    ¡Hola! Soy Ignacio, desarrollador de videojuegos con pasión por la IA, sistemas complejos y diseño retro. Me encanta mezclar lo clásico con tecnología moderna. Aquí puedes ver mis proyectos, ideas y experimentos.
+                  </p>
+                  <p>
+                    Este portfolio simula un escritorio de Windows 95 para transmitir esa estética nostálgica, pero todo el sistema está hecho desde cero con HTML, CSS y JS puro.
+                  </p>
+                  <!-- Puedes agregar más párrafos aquí -->
+              </div>
+            </div>
+          </div>
+        
+          <div class="tab-content" id="tab1" style="display: none;">
+            <div class="carousel-container">
+              <div class="carousel-arrows">
+                <span class="arrow" onclick="changeSlide(-1)">&lt;</span>
+              </div>
+              <div class="carousel" id="carousel">
+                <img src="resources/Portfolio_photo.png" class="carousel-image active" />
+                <img src="resources/windows-95.png" class="carousel-image" />
+                <img src="resources/Portfolio_photo.png" class="carousel-image" />
+                <img src="resources/windows-95.png" class="carousel-image" />
+              </div>
+              <div class="carousel-arrows">
+                <span class="arrow" onclick="changeSlide(1)">&gt;</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab2" style="display: none;">Contenido de pestaña 3</div>
+        </div>
+    </div>
+
+  <!-- Script para hacer la ventana arrastrable -->
+  <script src="src/window_manager.js"></script>
+  <script src="src/aboutme_manager.js"></script>
+</body>
+</html>

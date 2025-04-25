@@ -1,0 +1,88 @@
+.desktop {
+    display: flex;
+    align-items: flex-start;
+}
+  
+.icon 
+{
+    margin-top: 100px;
+    margin-left: 100px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+.icon:hover
+{
+    border: 2px dotted white;
+    background: #00000055;
+}
+
+.icon:active 
+{
+    border: 2px dotted white;
+    background-color: #000080aa;
+}
+
+.icon span
+{
+    display: block;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.icon img
+{
+    width: 78px;
+    height: 90px;
+}
+
+.taskbar 
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: silver;
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #000000;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+}
+  
+.taskbar .start-button 
+{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: #c0c0c0;
+    border: 2px solid #000;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    cursor: pointer;
+    user-select: none;
+}
+
+.taskbar .start-button span
+{
+    font-size: 12px;
+    padding: 0px 3px;
+}
+
+.taskbar .start-button img
+{
+    padding: 0px -12px;
+    width: 35px;
+    height: 35px;
+}
+  
+.taskbar-items 
+{
+    flex: 1;
+    margin-left: 10px;
+    display: flex;
+    gap: 8px;
+}
