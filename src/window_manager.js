@@ -1,4 +1,4 @@
-
+let zIndexCounter = 1;
 let draggedWindow   = null;
 let offsetX         = 0;
 let offsetY         = 0;
@@ -6,6 +6,9 @@ let offsetY         = 0;
 function open_window(window)
 {
     document.getElementById(window).style.display = "block";
+    setTimeout(() => {
+        bring_front(window);
+      }, 10);
 }
 
 function close_window(button)
@@ -52,4 +55,10 @@ function move_window(event)
     document.removeEventListener('mousemove', move_window);
     document.removeEventListener('mouseup', stop_draging);
     draggedWindow = null;
+  }
+
+  function bring_front(window)
+  {
+    zIndexCounter++;
+    document.getElementById(window).style.zIndex = zIndexCounter;
   }

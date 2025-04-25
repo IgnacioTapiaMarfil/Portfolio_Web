@@ -66,6 +66,25 @@
     user-select: none;
 }
 
+.taskbar :active
+{
+    background-color: #a0a0a0;
+    border-color: #000 #fff #fff #000;
+}
+
+.taskbar-menu
+{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: #c0c0c0;
+    border: 2px solid #000;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    cursor: pointer;
+    user-select: none;
+}
+
 .taskbar .start-button span
 {
     font-size: 12px;

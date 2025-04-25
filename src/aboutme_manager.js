@@ -1,16 +1,17 @@
 
 
-function showTab(index) {
-    const tabs = document.querySelectorAll('.tab-content');
-    tabs.forEach((tab, i) => {
-        tab.style.display = (i === index) ? 'flex' : 'none'; // Cambia 'block' a 'flex'
-    });
-  }
+function show_tab(index) 
+{
+  const tabs = document.querySelectorAll('.tab-content');
+  tabs.forEach((tab, i) => {
+      tab.style.display = (i === index) ? 'flex' : 'none';
+  });
+}
 
+let currentSlide = 0;
 
-  let currentSlide = 0;
-
-function changeSlide(direction) {
+function change_slide(direction) 
+{
   const images = document.querySelectorAll('#tab1 .carousel-image');
   images[currentSlide].classList.remove('active');
   currentSlide = (currentSlide + direction + images.length) % images.length;

@@ -1,8 +1,8 @@
 .window 
 {
     position: absolute;
-    top: 30%;
-    left: 30%;
+    top: 10%;
+    left: 20%;
     width: 900px;
     height: 600px;
     background: silver;
@@ -109,66 +109,79 @@
     flex-direction: column;
     box-sizing: border-box;
 }
+
+.project-content
+{
+  background: #d0d0d0;
+  border: 3px solid #fff;
+  border-top-color: #000;
+  border-left-color: #000f;
+  width: 100%;
+  height: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
   
 .about-container 
 {
-display: flex;
-flex: 1;
-overflow: hidden;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
 }
 
 .about-text 
 {
-width: 67.4%;
-height: 93%;
-margin-top: 20px;
-padding: 0px 20px 10px 0px;
-box-sizing: border-box;
-overflow-x: hidden;
-overflow-y: auto;
-font-size: 12px;
-line-height: 1.4;
+  width: 67.4%;
+  height: 93%;
+  margin-top: 20px;
+  padding: 0px 20px 10px 0px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 .about-text::-webkit-scrollbar
 {
-width: 12px;
+  width: 12px;
 }
 
 .about-text::-webkit-scrollbar-track 
 {
-background: #d0d0d0;
-margin-top: 10px;
-margin-bottom: 10px;
-border-radius: 0;
+  background: #d0d0d0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 0;
 }
 
 .about-text::-webkit-scrollbar-thumb 
 {
-background: #888;
-border-radius: 0;
-border: 1px solid #d0d0d0;
+  background: #888;
+  border-radius: 0;
+  border: 1px solid #d0d0d0;
 }
 
 .about-text::-webkit-scrollbar-thumb:hover 
 {
-background: #555;
+  background: #555;
 }
 
 .about-photo 
 {
-width: 40%;
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 10px;
-box-sizing: border-box;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .about-photo img 
 {
-max-width: 70%;
-max-height: 70%;
+  max-width: 70%;
+  max-height: 70%;
 }
 
 .carousel-container 
@@ -200,6 +213,7 @@ max-height: 70%;
     max-height: 500px;
     display: none;
     object-fit: contain;
+    cursor: pointer;
   }
   
   .carousel-image.active 

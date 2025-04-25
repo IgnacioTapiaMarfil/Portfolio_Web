@@ -17,23 +17,27 @@
 
 <body>
   <div class = "desktop">
-    <div class = "icon" id="portfolio_icon" onclick = "open_window('portfolio_window')">
+    <div class = "icon" id="portfolio_icon" onclick = "open_window('portfolio_window'), show_tab(0)">
         <img src="resources/Portfolio_photo.png">
         <span>About me</span>
     </div> 
-
     <div class="taskbar">
-        <div class="start-button">
-            <img src="resources/windows-95.png">
-            <span>Start</span>
-        </div>
-        <div class="taskbar-items">
-        </div>
+      <div class="start-button">
+        <img src="resources/windows-95.png">
+        <span>Start</span>
       </div>
 
+      <div class="taskbar-items"></div>
     </div>
 
-    <div class="window" id="portfolio_window" style="display: none;">
+    <div class="taskbar-menu">
+      <div class="taskbar-menu-items">
+
+      </div>
+    </div>
+  </div>
+
+    <div class="window" id="portfolio_window" style="display: none;" onmousedown="bring_front('portfolio_window')">
         <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
             <span>&lt;NT&gt;</span>
 
@@ -45,9 +49,9 @@
 
         <div class="window-content">
           <div class="tabs-button">
-            <button onclick="showTab(0)">Pestaña 1</button>
-            <button onclick="showTab(1)">Pestaña 2</button>
-            <button onclick="showTab(2)">Pestaña 3</button>
+            <button onclick="show_tab(0)">About me</button>
+            <button onclick="show_tab(1)">Projects</button>
+            <button onclick="show_tab(2)">Contact</button>
           </div>
         
           <div class="tab-content" id="tab0">
@@ -91,7 +95,7 @@
                 <span class="arrow" onclick="changeSlide(-1)">&lt;</span>
               </div>
               <div class="carousel" id="carousel">
-                <img src="resources/Portfolio_photo.png" class="carousel-image active" />
+                <img src="resources/Portfolio_photo.png" class="carousel-image active" onclick="open_window('zep_window')">
                 <img src="resources/windows-95.png" class="carousel-image" />
                 <img src="resources/Portfolio_photo.png" class="carousel-image" />
                 <img src="resources/windows-95.png" class="carousel-image" />
@@ -104,6 +108,54 @@
 
           <div class="tab-content" id="tab2" style="display: none;">Contenido de pestaña 3</div>
         </div>
+    </div>
+
+    <div class="window" id="zep_window" style="display: none;" onmousedown="bring_front('zep_window')">
+      <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
+          <span>&lt;NT&gt;</span>
+
+          <div class="close-button" onclick="close_window(this)">
+              <span>X</span>
+          </div>
+
+      </div>
+
+      <div class="window-content">
+        <div class="project-content">
+          <div class="about-container">
+            <div class="about-photo">
+              <img src="resources/Portfolio_photo.png" alt="Foto de Ignacio">
+            </div>
+            <div class="about-text">
+                <p>
+                  ¡Hola! Soy Ignacio, desarrollador de videojuegos con pasión por la IA, sistemas complejos y diseño retro. Me encanta mezclar lo clásico con tecnología moderna. Aquí puedes ver mis proyectos, ideas y experimentos.
+                </p>
+                <p>
+                  Este portfolio simula un escritorio de Windows 95 para transmitir esa estética nostálgica, pero todo el sistema está hecho desde cero con HTML, CSS y JS puro.
+                </p>
+                <p>
+                  ¡Hola! Soy Ignacio, desarrollador de videojuegos con pasión por la IA, sistemas complejos y diseño retro. Me encanta mezclar lo clásico con tecnología moderna. Aquí puedes ver mis proyectos, ideas y experimentos.
+                </p>
+                <p>
+                  Este portfolio simula un escritorio de Windows 95 para transmitir esa estética nostálgica, pero todo el sistema está hecho desde cero con HTML, CSS y JS puro.
+                </p>
+                <p>
+                  ¡Hola! Soy Ignacio, desarrollador de videojuegos con pasión por la IA, sistemas complejos y diseño retro. Me encanta mezclar lo clásico con tecnología moderna. Aquí puedes ver mis proyectos, ideas y experimentos.
+                </p>
+                <p>
+                  Este portfolio simula un escritorio de Windows 95 para transmitir esa estética nostálgica, pero todo el sistema está hecho desde cero con HTML, CSS y JS puro.
+                </p>
+                <p>
+                  ¡Hola! Soy Ignacio, desarrollador de videojuegos con pasión por la IA, sistemas complejos y diseño retro. Me encanta mezclar lo clásico con tecnología moderna. Aquí puedes ver mis proyectos, ideas y experimentos.
+                </p>
+                <p>
+                  Este portfolio simula un escritorio de Windows 95 para transmitir esa estética nostálgica, pero todo el sistema está hecho desde cero con HTML, CSS y JS puro.
+                </p>
+                <!-- Puedes agregar más párrafos aquí -->
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   <!-- Script para hacer la ventana arrastrable -->
