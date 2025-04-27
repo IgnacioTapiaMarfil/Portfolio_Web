@@ -247,3 +247,37 @@
     background-color: #a0a0a0;
     border-color: #000 #fff #fff #000;
   }
+
+
+  #game_window 
+  {
+    width: 700px;
+    height: 400px;
+    display: none;
+    position: absolute;
+  }
+  
+  #game_window canvas 
+  {
+    padding: 10px;
+    background: #9f9e9e;
+    height: calc(100%);
+    width: 100%;
+    border: 3px solid #fff;
+    border-top-color: #000;
+    border-left-color: #000f;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+
+
+
+
+
+
+
+
+
+

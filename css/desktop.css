@@ -74,15 +74,46 @@
 
 .taskbar-menu
 {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    background: #c0c0c0;
+    position: fixed;
+    bottom: 50px;
+    left: 10px;
+    background: #8d8d8d;
     border: 2px solid #000;
     border-top-color: #fff;
     border-left-color: #fff;
+    width: auto;
+    z-index: 1001;
+}
+
+.taskbar-menu-items .menu-item
+{
+    padding: 10px;
+    background: #c0c0c0;;
+    /* border: 1px solid #999; */
+    margin-left: 30px;
     cursor: pointer;
-    user-select: none;
+}
+
+.taskbar-menu-items .menu-item:hover
+{
+    background-color: #000080;
+    color: white;
+}
+
+.taskbar-menu-items .first-menu-item
+{
+    padding: 10px;
+    background: #c0c0c0;;
+    border-top: 2px solid white;
+    box-shadow: 0 -2px 0 #797979;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.taskbar-menu-items .first-menu-item:hover
+{
+    background-color: #000080;
+    color: white;
 }
 
 .taskbar .start-button span

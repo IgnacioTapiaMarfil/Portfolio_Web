@@ -5,10 +5,19 @@ let offsetY         = 0;
 
 function open_window(window)
 {
+  if(window == "game_window")
+  {
+    document.getElementById(window).style.display = "block";
+    setTimeout(() => {
+      if (typeof startGame === 'function') startGame();
+    }, 100);
+  }else
+  {
     document.getElementById(window).style.display = "block";
     setTimeout(() => {
         bring_front(window);
       }, 10);
+  }
 }
 
 function close_window(button)
@@ -62,3 +71,20 @@ function move_window(event)
     zIndexCounter++;
     document.getElementById(window).style.zIndex = zIndexCounter;
   }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const startButton = document.querySelector('.start-button');
+    const startMenu = document.getElementById('start_menu');
+  
+    startButton.addEventListener('click', () => {
+      const isVisible = startMenu.style.display === 'block';
+      startMenu.style.display = isVisible ? 'none' : 'block';
+    });
+  
+    // Cierra el menú si haces clic fuera de él
+    document.addEventListener('click', (e) => {
+      if (!startButton.contains(e.target) && !startMenu.contains(e.target)) {
+        startMenu.style.display = 'none';
+      }
+    });
+  });
