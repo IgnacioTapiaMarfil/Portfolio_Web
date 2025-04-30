@@ -83,16 +83,16 @@
         <div class="tab-content" id="tab1" style="display: none;">
           <div class="carousel-container">
             <div class="carousel-arrows">
-              <span class="arrow" onclick="changeSlide(-1)">&lt;</span>
+              <span class="arrow" onclick="change_slide(-1)">&lt;</span>
             </div>
             <div class="carousel" id="carousel">
-              <img src="resources/Portfolio_photo.png" class="carousel-image active" onclick="open_window('zep_window')">
+              <img src="resources/Portfolio_photo.png" class="carousel-image active" onclick="open_window('zep_window')"/>
               <img src="resources/windows-95.png" class="carousel-image" />
               <img src="resources/Portfolio_photo.png" class="carousel-image" />
               <img src="resources/windows-95.png" class="carousel-image" />
             </div>
             <div class="carousel-arrows">
-              <span class="arrow" onclick="changeSlide(1)">&gt;</span>
+              <span class="arrow" onclick="change_slide(1)">&gt;</span>
             </div>
           </div>
         </div>
@@ -164,8 +164,10 @@
   <!-- Script para hacer la ventana arrastrable -->
   <script src="src/window_manager.js"></script>
   <script src="src/aboutme_manager.js"></script>
+  <script src="src/game_manager.js"></script>
   <script src="src/jump_game.js"></script>
   <script src="src/input.js"></script>
   <script src="src/utils.js"></script>
+  
 </body>
 </html>

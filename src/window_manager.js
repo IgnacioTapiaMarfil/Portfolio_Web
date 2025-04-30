@@ -5,11 +5,14 @@ let offsetY         = 0;
 
 function open_window(window)
 {
+  if(!window)
+    return;
+
   if(window == "game_window")
   {
     document.getElementById(window).style.display = "block";
     setTimeout(() => {
-      if (typeof startGame === 'function') startGame();
+      if (typeof start_game === 'function') start_game();
     }, 100);
   }else
   {
@@ -22,10 +25,17 @@ function open_window(window)
 
 function close_window(button)
 {
-    const window = button.closest('.window');
-    if (window) {
-        window.style.display = 'none';
-    }
+  const window = button.closest('.window');
+
+  if(!window)
+    return;
+
+  if(window.id == "game_window")
+  {
+    close_game();
+  }
+  window.style.display = 'none';
+
 }
 
 function start_draging(event, window)
@@ -59,32 +69,31 @@ function move_window(event)
     }
   }
   
-  function stop_draging() 
-  {
-    document.removeEventListener('mousemove', move_window);
-    document.removeEventListener('mouseup', stop_draging);
-    draggedWindow = null;
-  }
+function stop_draging() 
+{
+  document.removeEventListener('mousemove', move_window);
+  document.removeEventListener('mouseup', stop_draging);
+  draggedWindow = null;
+}
 
-  function bring_front(window)
-  {
-    zIndexCounter++;
-    document.getElementById(window).style.zIndex = zIndexCounter;
-  }
+function bring_front(window)
+{
+  zIndexCounter++;
+  document.getElementById(window).style.zIndex = zIndexCounter;
+}
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const startButton = document.querySelector('.start-button');
-    const startMenu = document.getElementById('start_menu');
-  
-    startButton.addEventListener('click', () => {
-      const isVisible = startMenu.style.display === 'block';
-      startMenu.style.display = isVisible ? 'none' : 'block';
-    });
-  
-    // Cierra el menú si haces clic fuera de él
-    document.addEventListener('click', (e) => {
-      if (!startButton.contains(e.target) && !startMenu.contains(e.target)) {
-        startMenu.style.display = 'none';
-      }
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  const startButton = document.querySelector('.start-button');
+  const startMenu = document.getElementById('start_menu');
+
+  startButton.addEventListener('click', () => {
+    const isVisible = startMenu.style.display === 'block';
+    startMenu.style.display = isVisible ? 'none' : 'block';
   });
+
+  document.addEventListener('click', (e) => {
+    if (!startButton.contains(e.target) && !startMenu.contains(e.target)) {
+      startMenu.style.display = 'none';
+    }
+  });
+});

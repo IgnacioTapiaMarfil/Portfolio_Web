@@ -2,97 +2,99 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-function startGame() {
-  
-    function resizeCanvas() {
-      const rect = canvas.getBoundingClientRect();
-      canvas.width = rect.width;
-      canvas.height = rect.height;
-    }
-  
-    window.addEventListener('resize', resizeCanvas);
+function resizeCanvas() 
+{
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width;
+  canvas.height = rect.height;
+}
+
+class Game
+{
+  constructor()
+  {
+    this.Player = null;
+    this.Obstacles = [];
+
+    this.MaxObstaclesTime = 3;
+    this.MinObstaclesTime = 1;
+
+    this.ObtaclesTimer = 0;
+    this.ObstaclesTimerIndex = 0;
+
+    this.running = false;
+  }
+
+  start()
+  {
     resizeCanvas();
-  
-    let currentScene = null;
 
     SetupKeyboardEvents();
     SetupMouseEvents();
-  
-    const scenes = {
-      menu: {
-        update() {},
-        draw() {
-          ctx.fillStyle = "#000";
-          ctx.fillRect(0, 0, canvas.width, canvas.height);
-          ctx.fillStyle = "#fff";
-          ctx.font = "20px monospace";
-          ctx.fillText("Pulsa para empezar", 200, 240);
-        },
-        handleClick() 
-        {
-          currentScene = new Game();
 
-          currentScene.start();
-        }
-      },
-    };
-  
-    canvas.onclick = () => {
-      if (currentScene && currentScene.handleClick) currentScene.handleClick();
-    };
-  
-    function close()
+    this.player = new Player(new Vector2(100, canvas.height/2), "resources/windows-95.png")
+
+    this.running = true;
+    
+    this.ObtaclesTimer = RandomBetweenFloat(this.MinObstaclesTime, this.MaxObstaclesTime);
+
+    this.update();
+  }
+
+  stop()
+  {
+    this.running = false;
+  }
+
+  update()
+  {
+    if(!this.running) return;
+
+    this.player.update();
+
+    if(this.ObstaclesTimerIndex <= this.ObtaclesTimer)
     {
-      currentScene = null;
+      this.ObstaclesTimerIndex += 0.02;
+    }
+    else
+    {
+      console.log("crado")
+      this.Obstacles.push(new Obstacles(new Vector2(canvas.width, canvas.height-50)))
+      this.ObtaclesTimer = RandomBetweenFloat(this.MinObstaclesTime, this.MaxObstaclesTime);
+      this.ObstaclesTimerIndex = 0;
     }
 
-    function loop() {
-      if (currentScene) 
-      {
-        currentScene.update();
-        currentScene.draw(ctx);
+    for(let obstacle of this.Obstacles)
+    {
+      obstacle.update();
 
-        console.log("update")
-      } 
-      else 
+      if (CheckCollision2Rects(this.player.getCollider(), obstacle.getCollider())) 
       {
-        // puedes poner un fallback como volver al menú o dejar pantalla en negro
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        console.log("¡Colisión!");
+        this.stop();
       }
 
-      Input.PostUpdate();
-
-      requestAnimationFrame(loop);
     }
-  
-    currentScene = scenes.menu;
-    loop();
+
+    this.draw(ctx);
+
+    Input.PostUpdate();
+
+    requestAnimationFrame(this.update.bind(this));
   }
 
-  class Game
+  draw(ctx)
   {
-    constructor()
-    {
-      this.Player = null;
-    }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    start()
-    {
-      this.player = new Player(new Vector2(100, canvas.height/2), "resources/windows-95.png")
-    }
+    this.player.draw(ctx);
 
-    update()
+    for(let obstacle of this.Obstacles)
     {
-      this.player.update();
-    }
-
-    draw(ctx)
-    {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      this.player.draw(ctx);
+      obstacle.draw(ctx);
     }
   }
+}
 
 class Player 
 {
@@ -102,14 +104,14 @@ class Player
     this.img = new Image();
     this.img.src = img;
 
-    this.boundingWidth  = 50;
+    this.boundingWidth  = 30;
     this.boundingHeight = 50;
     this.boundingCrouchHeight = 20;
 
     this.velocityY = 0;
-    this.gravity = 0.15;
-    this.lowJumpGravity = 1.75;
-    this.jumpStrength = -7;
+    this.gravity = 0.20;
+    this.lowJumpGravity = 3;
+    this.jumpStrength = -10;
     this.grounded = false;
     this.jumping = false;
     this.isCrouching = false;
@@ -129,7 +131,6 @@ class Player
     if (this.jumping && (Input.IsKeyUp(KEY_SPACE) || Input.IsKeyUp(KEY_UP))) 
     {
       this.velocityY += this.lowJumpGravity;
-      console.log("soltado")
     } 
     else 
     {
@@ -156,7 +157,8 @@ class Player
     }
   }
 
-  getCollider() {
+  getCollider() 
+  {
     const height = this.isCrouching ? this.boundingCrouchHeight : this.boundingHeight;
     return {
       x: this.position.x - this.boundingWidth / 2,
@@ -185,5 +187,47 @@ class Player
 
 class Obstacles
 {
+  constructor(position)
+  {
+    this.position = position;
 
+    this.img = new Image();
+    this.img.src = "resources/windows-95.png";
+
+    this.speed = 3;
+
+    this.boundingWidth  = 30;
+    this.boundingHeight = 50;
+  }
+
+  update()
+  {
+    this.position.x -= this.speed;
+  }
+
+  getCollider() 
+  {
+    return {
+      x: this.position.x - this.boundingWidth / 2,
+      y: this.position.y - this.boundingHeight,
+      width: this.boundingWidth,
+      height: this.boundingHeight
+    };
+  }
+
+  draw(ctx)
+  {
+    if (this.img.complete) 
+    {
+      ctx.save();
+      ctx.translate(this.position.x, this.position.y);
+      ctx.scale(0.2, 0.2);
+      ctx.drawImage(this.img, -this.img.width / 2, -this.img.height);
+      ctx.restore();
+    }
+
+    const collider = this.getCollider();
+    ctx.strokeStyle = "grean";
+    ctx.strokeRect(collider.x, collider.y, collider.width, collider.height);
+  }
 }
