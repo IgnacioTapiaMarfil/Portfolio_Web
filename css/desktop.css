@@ -28,7 +28,6 @@
 .icon span 
 {
     display: none;
-    margin-top: 15px;
     font-size: 15px;
     color: white;
 }
@@ -40,8 +39,8 @@
 
 .icon img
 {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
 }
 
 .taskbar 
