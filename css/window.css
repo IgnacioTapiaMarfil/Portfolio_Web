@@ -109,19 +109,6 @@
     flex-direction: column;
     box-sizing: border-box;
 }
-
-.project-content
-{
-  background: #d0d0d0;
-  border: 3px solid #fff;
-  border-top-color: #000;
-  border-left-color: #000f;
-  width: 100%;
-  height: calc(100% - 40px);
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
   
 .about-container 
 {
@@ -269,6 +256,24 @@
     overflow-y: hidden;
     overflow-x: hidden;
     box-sizing: border-box;
+  }
+
+  .link-button
+  {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 6px 12px;
+    color: black;
+    background-color: #c0c0c0;
+    border: 3px solid;
+    border-color: #fff #000 #000 #fff;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .link-button:active {
+    background-color: #a0a0a0;
+    border-color: #000 #fff #fff #000;
   }
 
 

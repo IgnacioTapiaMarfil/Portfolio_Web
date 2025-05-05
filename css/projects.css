@@ -1,0 +1,87 @@
+
+.project-content
+{
+  background: #d0d0d0;
+  border: 3px solid #fff;
+  border-top-color: #000;
+  border-left-color: #000f;
+  width: 100%;
+  height: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.project-container 
+{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.project-line 
+{
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+}
+
+.project-text 
+{
+  width: 67.4%;
+  height: 93%;
+  margin-top: 0px;
+  padding: 0px 20px 10px 0px;
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.project-text h3
+{
+  font-size: 15px;
+  margin-top: 30px;
+}
+
+.project-container::-webkit-scrollbar
+{
+  width: 12px;
+}
+
+.project-container::-webkit-scrollbar-track 
+{
+  background: #d0d0d0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 0;
+}
+
+.project-container::-webkit-scrollbar-thumb 
+{
+  background: #888;
+  border-radius: 0;
+  border: 1px solid #d0d0d0;
+}
+
+.project-container::-webkit-scrollbar-thumb:hover 
+{
+  background: #555;
+}
+
+.project-photo 
+{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.project-photo img 
+{
+  max-width: 70%;
+  max-height: 70%;
+}
