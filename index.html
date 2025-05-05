@@ -9,7 +9,6 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
-  <!-- CSS separadas -->
   <link rel="stylesheet" href="css/general.css">
   <link rel="stylesheet" href="css/desktop.css">
   <link rel="stylesheet" href="css/window.css">
@@ -19,13 +18,17 @@
 <body>
   <div class = "desktop">
     <div class = "icon" id="portfolio_icon" onclick = "open_window('portfolio_window'), show_tab(0)">
-        <img src="resources/Portfolio_photo.png">
-        <span>About me</span>
+        <img src="resources/AboutMe.png">
+        <span>About</span>
     </div>
-    <div class = "icon" id="portfolio_icon" onclick = "open_window('game_window'), show_tab(0)">
-      <img src="resources/Portfolio_photo.png">
-      <span>Game</span>
-  </div>  
+    <div class = "icon" id="portfolio_icon" onclick = "open_window('portfolio_window'), show_tab(1)">
+      <img src="resources/Projects.png">
+      <span>Games</span>
+    </div>  
+    <div class = "icon" id="portfolio_icon" onclick = "open_window('portfolio_window'), show_tab(2)">
+      <img src="resources/Contact.png">
+      <span>Contact</span>
+    </div> 
     <div class="taskbar">
       <div class="start-button">
         <img src="resources/windows-95.png">
@@ -37,10 +40,9 @@
 
     <div class="taskbar-menu" id="start_menu" style="display: none;">
       <div class="taskbar-menu-items">
-        <div class="menu-item">Portfolio</div>
-        <div class="menu-item">Proyectos</div>
-        <div class="menu-item">Contacto</div>
-        <div class="first-menu-item">My</div>
+        <div class="menu-item" onclick = "open_window('portfolio_window'), show_tab(2)">Contact</div>
+        <div class="menu-item" onclick = "open_window('portfolio_window'), show_tab(1)">Games</div>  
+        <div class="first-menu-item" onclick = "open_window('portfolio_window'), show_tab(0)">My</div>
       </div>
     </div>
   </div>
@@ -72,7 +74,7 @@
                   Programador de videojuegos con varios años de experiencia en lenguajes como C++, C# y JavaScript, así como en herramientas como Unity y UnrealEngine. A lo largo de mi trayectoria, he trabajado en diversos proyectos, tanto personales como colaborativos, ejerciendo principalmente de programador principal pero también de diseñador y productor.
                 </p>
                 <p>
-                  Especializado en el desarrollo de videojuegos en motores, también considero que tengo una gran capacidad de entender la programación a un nivel lógico, lo que me ayuda a poder entender y trabajar sobre cualquier proyecto o código que se me de. 
+                  Especializado en el desarrollo de videojuegos en motores, también considero que tengo una gran capacidad de entender la programación a un nivel lógico, lo que me ayuda a poder entender y trabajar sobre cualquier proyecto o código que se me de.
                 </p>
                 <p>
                   Con una gran pasión por desarrollar videojuegos y llevar mis ideas a cabo mi objetivo es seguir creciendo como programador en la industria del videojuego.
@@ -87,10 +89,22 @@
               <span class="arrow" onclick="change_slide(-1)">&lt;</span>
             </div>
             <div class="carousel" id="carousel">
-              <img src="resources/Portfolio_photo.png" class="carousel-image active" onclick="open_window('zep_window')"/>
-              <img src="resources/windows-95.png"      class="carousel-image"        onclick="open_window('gameJams_window')"/>
-              <img src="resources/Portfolio_photo.png" class="carousel-image" />
-              <img src="resources/windows-95.png"      class="carousel-image" />
+              <div class="carousel-image active" onclick="open_window('zep_window')">
+                <img src="resources/Zep_Image.png" />
+                <div class="overlay-text">ZEP</div>
+              </div>
+              <div class="carousel-image" onclick="open_window('gameJams_window')">
+                <img src="resources/GameJams.png" />
+                <div class="overlay-text">Game Jams</div>
+              </div>
+              <div class="carousel-image" onclick="open_window('cannon_window')">
+                <img src="resources/BlaseterCannon.png" />
+                <div class="overlay-text">Blaseter Cannon</div>
+              </div>
+              <div class="carousel-image">
+                <img src="resources/Another.png" onclick="open_window('other_window')">
+                <div class="overlay-text">Otros Proyectos y Códigos</div>
+              </div>
             </div>
             <div class="carousel-arrows">
               <span class="arrow" onclick="change_slide(1)">&gt;</span>
@@ -98,11 +112,27 @@
           </div>
         </div>
 
-        <div class="tab-content" id="tab2" style="display: none;">Contenido de pestaña 3</div>
+        <div class="tab-content" id="tab2" style="display: none;">
+          <div class="contact-content">
+            <div class="contact-line">
+              <img src="resources/Gmail.png" style="margin-left: 80px">
+              <span style="margin-left: 50px">igtapia001@gmail.com</span>
+            </div>
+            <div class="contact-line">
+              <a href="https://n-tapia.itch.io/" target="_blank" rel="noopener noreferrer" class="link-text"> <img src="resources/Projects.png"> <span>Iich.io</span></a>
+            </div>
+            <div class="contact-line">
+              <a href="https://www.linkedin.com/in/ignacio-tapia-marfil-b68506267/" target="_blank" rel="noopener noreferrer" class="link-text"> <img src="resources/Linkedin.png"> <span>Linkedin</span></a>
+            </div>
+            <div class="contact-line">      
+              <a href="https://github.com/IgnacioTapiaMarfil" target="_blank" rel="noopener noreferrer" class="link-text"> <img src="resources/Github.png"><span>Github</span></a>
+            </div>
+          </div>
+        </div>
       </div>
   </div>
 
-  <div class="window" id="gameJams_window" style="display: none;" onmousedown="bring_front('gameJams_window')">
+  <div class="window" id="gameJams_window" style="display: none; top: 11%; left: 21%;" onmousedown="bring_front('gameJams_window')">
     <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
         <span>GameJams</span>
 
@@ -116,9 +146,6 @@
       <div class="project-content">
         <div class="project-container">
           <div class = "project-line"> 
-            <div class="project-photo">
-              <img src="resources/Portfolio_photo.png" alt="Foto de Ignacio">
-            </div>
             <div class="project-text">
               <h3>
                 Descripción
@@ -138,7 +165,7 @@
               </h3>
 
               <p>
-                En estos juegos he realizado la programacion y parte del diseño.
+                En estos juegos he realizado la programación y parte del diseño.
                 <br>
               </p>
 
@@ -169,26 +196,29 @@
               <h3>
                 The miau the miau and the miau 
                 <br> 
-                ----------------------------------
+                --------------------------
               </h3>
 
               <p>
-                Este juego fue realizado entre dos personas para la ScoerSpace Jam #27 de Itch.io.
+                Este juego fue realizado entre dos personas para la ScoerSpace Jam #27 de Itch.io
               </p>
 
               <p>
-                	La tematica de Jam era realizar un juego que tuviese un ScoreBoard y que tuviera que ver con Gats+Pistolas.
+                La temática de Jam era realizar un juego con un ScoreBoard y que tuviera relación con Gatos + Pistolas.
               </p>
 
               <p>
-                Realizamos un juego al estilo "Fruit Ninja" en el que en un tiempo limitado tenias que disparar a la mayor cantidad de fruta que te lanzaban. 
+                Realizamos un juego al estilo "Fruit Ninja" en el que, en un tiempo limitado, tienes que disparar a la mayor cantidad de fruta que te lanzan.
                 <br>
-                Tambien añadimos una dinamita que te restaba tiempo y unos gatos que te añadian.
+                Tambien añadimos una dinamita que resta tiempo y unos gatos que te añaden.
               </p>
 
               <p>
-                Para realizarlo tuvimos tres días.
+                Este juego fue realizado en 3 días.
               </p>
+            </div>
+            <div class="project-photo">
+              <img src="resources/TheMiauTheMiau_Image.png" alt="Foto de Ignacio">
             </div>
           </div>
           <div class = "project-line"> 
@@ -196,7 +226,7 @@
               <h3>
                 Tiny Pocket
                 <br> 
-                ----------------------------------
+                --------------------------
               </h3>
 
               <p>
@@ -204,18 +234,21 @@
               </p>
 
               <p>
-                	La tematica de Jam era "Key Item".
+                La temática de la Jam era "Key Item".
               </p>
 
               <p>
-                Para nuestro juego decidimos hacer un DungeonCrawler en el que solo podras llevar un objeto encima a la vez.
+                Para nuestro juego decidimos hacer un DungeonCrawler, en el que solo podrás llevar un objeto encima a la vez.
                 <br>
-                Para la IA de los enemigos tuve que añadir un paquete de Unity, NavMeshPlus, el cual no esta adaptado para vista isometrica por lo que tuve que retocar ciertas cosas.
+                Para la IA de los enemigos tuve que añadir un paquete de Unity, NavMeshPlus, el cual no esta adaptado para vista isometrica, por lo que tuve que retocarle ciertas cosas.
               </p>
 
               <p>
-                Para realizarlo tuvimos una semana.
+                Este juego fue realizado en una semana.
               </p>
+            </div>
+            <div class="project-photo">
+              <img src="resources/TinyPocker_Image.png" alt="Foto de Ignacio">
             </div>
           </div>
         </div>
@@ -223,7 +256,7 @@
     </div>
   </div>
 
-  <div class="window" id="zep_window" style="display: none;" onmousedown="bring_front('zep_window')">
+  <div class="window" id="zep_window" style="display: none; top: 12%; left: 22%;" onmousedown="bring_front('zep_window')">
     <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
         <span>ZEP</span>
 
@@ -238,13 +271,13 @@
         <div class="project-container">
           <div class = "project-line"> 
             <div class="project-photo">
-              <img src="resources/Portfolio_photo.png" alt="Foto de Ignacio">
+              <img src="resources/Zep_Project_Image.png" alt="Foto de Zep" width="550" height="350">
             </div>
             <div class="project-text">
               <h3>
                 Descripción
                 <br> 
-                --------------------------------
+                --------------------------
               </h3>
 
               <p>
@@ -255,24 +288,24 @@
               <h3>
                 Cargos
                 <br> 
-                --------------------------------
+                --------------------------
               </h3>
 
               <p>
-                En este proyecto he ejercido el cargo de senior programmer, además de encargarme de gran parte de la implementación de assets y 
-                arte dentro del motor, y del diseño de diversas mecánicas y funcionamientos del juego.
+                En este proyecto he ejercido el cargo de senior programmer, además de encargarme de gran parte de la implementación de assets y arte dentro del motor 
+                y del diseño de diversas mecánicas y funcionamientos del juego.
                 <br>
               </p>
 
               <h3>
                 Estado actual
                 <br> 
-                --------------------------------
+                --------------------------
               </h3>
 
               <p>
-                A fecha de hoy el proyecto cuenta con más de 30 clases creadas enteramente por mí, todas estructuradas y totalmente reescalables. <br> 
-                Contamos con una demo inicial la cual presentamos en la feria CyL in game 2025.
+                A fecha de hoy, el proyecto cuenta con más de 30 clases creadas enteramente por mí, todas estructuradas y totalmente reescalables. <br> 
+                Contamos con una demo inicial, la cual llevamos a la feria CyL InGame 2025.
                 <br> 
                 <a href="https://arrecifegames.itch.io/zep-demo-for-cyl-games-show-boss-fight-prototype" target="_blank" rel="noopener noreferrer" class="link-button">ZEP Demo</a>
               </p>
@@ -281,7 +314,7 @@
           <div class = "project-line"style="justify-content: center;"> 
             <div class="project-text" style="text-align: center;">
               <h3>
-                Implementaciones destacables
+                Partes destacables
                 <br> 
                 ----------------------------------
               </h3>
@@ -290,25 +323,25 @@
          <div class = "project-line"> 
             <div class="project-text">
               <h3>
-                Sistema de Dialogos 
+                Sistema de Diálogos 
                 <br> 
                 ----------------------------------
               </h3>
 
               <p>
-                Para ZEP he diseñado y programado  un sistema de dialogos desde 0. 
+                Para ZEP he diseñado y programado un sistema de diálogos desde 0. 
                 <br>
-                Este sistema que funciona a traves de Structs y DataTables esta diseñado para que cada NPC tenga su propio estado en el juego en funcion de:
-                cuantas veces has hablado con el ahora, cuantas veces lo has hecho a lo largo del juego (Medidor de relación) y otros medidores que indican la fase del juego en la que estas.
+                Este sistema que funciona a través de Structs y DataTables está diseñado para que cada NPC tenga su propio estado en el juego en función de: cuántas veces has hablado con él ahora, 
+                cuántas veces lo has hecho a lo largo del juego (Medidor de relación) y otros medidores que indican la fase del juego en la que estas.
               </p>
 
               <p>
-                	Segun estos medidores, cuando interactues con el NPC, el Componente de dialogo te lanzara, si existe, el dialogo correspondiente a el estado del NPC.
+                Según estos medidores, cuando interactúas con el NPC, el Componente de diálogo te lanzará, si existe, el diálogo correspondiente a el estado del NPC
               </p>
 
               <p>
-                Lo interesante del Componente de dialogo es que solo le enviamos estos medidores en forma de string y el busca la conversación que tiene que lanzar en la DataTable. 
-                Esto nos permite añadir este componente a otros objetos y simplemente estableciendo un sistema de strings o datos ya tenemos el sistema de dialogo establecido.
+                Lo interesante del Componente de Diálogo es que solo le enviamos estos medidores en forma de string y él busca la conversación que tiene que lanzar en la DataTable. 
+                Esto nos permite añadir este componente a otros objetos y simplemente estableciendo un sistema de strings o datos ya tenemos el sistema de diálogo establecido.
               </p>
             </div>
           </div>
@@ -321,13 +354,13 @@
               </h3>
 
               <p>
-                Los minijuegos en ZEP estan todos derivados de un objeto padre, esto debido a que todos tienen la misma estructura principal.
+                Los minijuegos en ZEP estan todos derivados de un objeto padre, esto debido a que todos comparten la misma estructura principal.
                 <br>
-                Despues en cada minijuego solo tenemos que añadir sus acciones.
+                Después en cada minijuego solo tenemos que añadir sus acciones.
               </p>
 
               <p>
-                	Estos minijuegos estan pensados para poder ser intanciados en cualquier momento. Asi si necesitamos relizar minijuegos fuera del sistema de pesca tendria una implementación sencilla.
+                Estos minijuegos están pensados para poder ser creados en cualquier momento. Así si necesitamos realizar minijuegos fuera del sistema de pesca tendría una implementación sencilla.
               </p>
             </div>
           </div>
@@ -344,20 +377,20 @@
               </p>
 
               <p>
-                Un Struct general que incluye: la informacion que comparten todos los objetos mas un struct de el tipo concreto del objeto.
+                Un Struct general que incluye: la información que comparten todos los objetos más un struct del tipo concreto del objeto.
                 <br>
-                De esta forma si queremos añadir mas tipos de objetos al juego solo tenemos que crear su struct para ese tipo de objeto y añadirlo a los structs que se pueden meter en el general.
+                De esta forma si queremos añadir más tipos de objetos al juego solo tenemos que crear su struct para ese tipo de objeto y añadirlo a los structs que se pueden meter en el general.
               </p>
 
               <p>
-                Despues creamos una tabla de datos con ese Struct general y ahi creamos todos los objetos que vamos a utilizar en el juego, cada uno con un ID individual para poder identificarlos y acceder a cualquiera facilmente.
+                Después, creamos una tabla de datos con ese Struct general y ahí creamos todos los objetos que vamos a utilizar en el juego, cada uno con un ID individual para poder identificarlos y acceder a cualquiera fácilmente.
               </p>
             </div>
           </div>
           <div class = "project-line"style="justify-content: center;"> 
             <div class="project-text" style="text-align: center;">
               <h3>
-                Cosas del final (No se como ponerlo)
+                Mas detalles
                 <br> 
                 ----------------------------------
               </h3>
@@ -366,12 +399,12 @@
           <div class = "project-line"> 
             <div class="project-text">
               <p>
-                Para este proyecto tambien he creado y organizado un repositorio que hemos manejado con SourceTree.
+                Para este proyecto también he creado y organizado un repositorio que hemos manejado con SourceTree
                 <br>
-                Ademas he utilizado herramientas como fijma, canva y excel para la organización y diseño de las mecanicas y el equipo.
+                Además, he utilizado herramientas como figma, canva y excel para la organización y diseño de las mecánicas y el equipo.
               </p>
               <p>
-                El codigo de este proyecto no esta disponible devido a temas de copiright.
+                El código de este proyecto no está disponible debido a temas de copyright
               </p>
             </div>
           </div>
@@ -380,7 +413,7 @@
     </div>
   </div>
 
-  <div class="window" id="cannon_window" style="display: none;" onmousedown="bring_front('cannon_window')">
+  <div class="window" id="cannon_window" style="display: none; top: 13%; left: 23%;" onmousedown="bring_front('cannon_window')">
     <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
         <span>BlasterCannon</span>
 
@@ -395,7 +428,7 @@
         <div class="project-container">
           <div class = "project-line"> 
             <div class="project-photo">
-              <img src="resources/Portfolio_photo.png" alt="Foto de Ignacio">
+              <img src="resources/BlasterCannon_Project.png" alt="Foto de Ignacio">
             </div>
             <div class="project-text">
               <h3>
@@ -405,7 +438,7 @@
               </h3>
 
               <p>
-                Juego realizado con JavaScript, HTML y Css
+                Juego realizado con JavaScript, HTML y Css.
                 <br>
               </p>
 
@@ -416,8 +449,7 @@
               </h3>
 
               <p>
-                En este proyecto he ejercido el cargo de senior programmer, además de encargarme de gran parte de la implementación de assets y 
-                arte dentro del motor, y del diseño de diversas mecánicas y funcionamientos del juego.
+                Para este proyecto realicé toda la programación, así como el diseño del juego.
                 <br>
               </p>
 
@@ -428,17 +460,16 @@
               </h3>
 
               <p>
-                A fecha de hoy el proyecto cuenta con más de 30 clases creadas enteramente por mí, todas estructuradas y totalmente reescalables. <br> 
-                Contamos con una demo inicial la cual presentamos en la feria CyL in game 2025.
+                Para probar el proyecto puedes encontrarlo en mi pagina de Itch.io.
                 <br> 
-                <a href="https://arrecifegames.itch.io/zep-demo-for-cyl-games-show-boss-fight-prototype" target="_blank" rel="noopener noreferrer" class="link-button">ZEP Demo</a>
+                <a href="https://n-tapia.itch.io/blaster-cannon" target="_blank" rel="noopener noreferrer" class="link-button">BlasterCannon</a>
               </p>
             </div>
           </div>
           <div class = "project-line"style="justify-content: center;"> 
             <div class="project-text" style="text-align: center;">
               <h3>
-                Implementaciones destacables
+                Partes destacables
                 <br> 
                 ----------------------------------
               </h3>
@@ -447,74 +478,62 @@
          <div class = "project-line"> 
             <div class="project-text">
               <h3>
-                Sistema de Dialogos 
+                Sistema de Físicas 
                 <br> 
                 ----------------------------------
               </h3>
 
               <p>
-                Para ZEP he diseñado y programado  un sistema de dialogos desde 0. 
-                <br>
-                Este sistema que funciona a traves de Structs y DataTables esta diseñado para que cada NPC tenga su propio estado en el juego en funcion de:
-                cuantas veces has hablado con el ahora, cuantas veces lo has hecho a lo largo del juego (Medidor de relación) y otros medidores que indican la fase del juego en la que estas.
+                Para este juego, después de implementar y trastear con librerías de JS como Matters o Planck, decidí gestionar yo mismo las físicas, debido a que lo que yo necesitaba era más simple.
               </p>
 
               <p>
-                	Segun estos medidores, cuando interactues con el NPC, el Componente de dialogo te lanzara, si existe, el dialogo correspondiente a el estado del NPC.
-              </p>
-
-              <p>
-                Lo interesante del Componente de dialogo es que solo le enviamos estos medidores en forma de string y el busca la conversación que tiene que lanzar en la DataTable. 
-                Esto nos permite añadir este componente a otros objetos y simplemente estableciendo un sistema de strings o datos ya tenemos el sistema de dialogo establecido.
+                Para esto añadí diversos comportamientos a las pelotas para simular el rebote, la caída y la rotación de una forma más o menos arcade que es lo que mejor quedaba con el concepto del juego.
               </p>
             </div>
           </div>
           <div class = "project-line"> 
             <div class="project-text">
               <h3>
-                Minijuegos
+                Partículas
                 <br> 
                 ----------------------------------
               </h3>
 
               <p>
-                Los minijuegos en ZEP estan todos derivados de un objeto padre, esto debido a que todos tienen la misma estructura principal.
+                También cree mi propio sistema de partículas, este es un sistema simple en el que se genera un número aleatorio de partículas, con velocidad y tamaños aleatorios y estas se van volviendo translúcidas hasta desaparecer.
                 <br>
-                Despues en cada minijuego solo tenemos que añadir sus acciones.
+                Cuando estas están invisibles se eliminan
               </p>
 
-              <p>
-                	Estos minijuegos estan pensados para poder ser intanciados en cualquier momento. Asi si necesitamos relizar minijuegos fuera del sistema de pesca tendria una implementación sencilla.
-              </p>
             </div>
           </div>
           <div class = "project-line"> 
             <div class="project-text">
               <h3>
-                Objetos
+                LeaderBoard con FireBase
                 <br> 
                 ----------------------------------
               </h3>
 
               <p>
-                El sistema de objetos de ZEP funciona a partir de Structs.    
+                Para la implementación de la LeaderBoard utilicé la API de FireBase.
               </p>
 
               <p>
-                Un Struct general que incluye: la informacion que comparten todos los objetos mas un struct de el tipo concreto del objeto.
-                <br>
-                De esta forma si queremos añadir mas tipos de objetos al juego solo tenemos que crear su struct para ese tipo de objeto y añadirlo a los structs que se pueden meter en el general.
+                Ahí cree con FirestoreDatabase una base de datos con una tabla para guardar todas las puntuaciones. Cada una con un nombre y una puntuación.
               </p>
 
               <p>
-                Despues creamos una tabla de datos con ese Struct general y ahi creamos todos los objetos que vamos a utilizar en el juego, cada uno con un ID individual para poder identificarlos y acceder a cualquiera facilmente.
+                Después, llamo a esta tabla desde un archivo JS par introducir la puntuación. 
+                También hice una función para sacar los datos y generar una LeaderBoard con las puntuaciones de los 5 mejores.
               </p>
             </div>
           </div>
           <div class = "project-line"style="justify-content: center;"> 
             <div class="project-text" style="text-align: center;">
               <h3>
-                Cosas del final (No se como ponerlo)
+                Mas cosas
                 <br> 
                 ----------------------------------
               </h3>
@@ -523,12 +542,54 @@
           <div class = "project-line"> 
             <div class="project-text">
               <p>
-                Para este proyecto tambien he creado y organizado un repositorio que hemos manejado con SourceTree.
-                <br>
-                Ademas he utilizado herramientas como fijma, canva y excel para la organización y diseño de las mecanicas y el equipo.
+                Para ver el código entero de este proyecto se puede ver en mi github.
               </p>
+              <a href="https://github.com/IgnacioTapiaMarfil/BlasterCannon" target="_blank" rel="noopener noreferrer" class="link-button">GitHub/BlasterCannon</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="window" id="other_window" style="display: none; top: 14%; left: 24%;" onmousedown="bring_front('other_window')">
+    <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
+        <span>Other</span>
+
+        <div class="close-button" onclick="close_window(this)">
+            <span>X</span>
+        </div>
+
+    </div>
+
+    <div class="window-content">
+      <div class="project-content">
+        <div class="project-container">
+          <div class = "project-line"style="justify-content: center;"> 
+            <div class="project-text" style="text-align: center;">
+              <h3>
+                Mas juegos
+                <br> 
+                ----------------------------------
+              </h3>
               <p>
-                El codigo de este proyecto no esta disponible devido a temas de copiright.
+                Para ver algunos de los juegos que he hecho entra en mi itch.io.
+                <br> 
+                <a href="https://n-tapia.itch.io/" target="_blank" rel="noopener noreferrer" class="link-button">Iich.io</a>
+              </p>
+            </div>
+          </div>
+          <div class = "project-line"style="justify-content: center;"> 
+            <div class="project-text" style="text-align: center;">
+              <h3>
+                Mas codigo
+                <br> 
+                ----------------------------------
+              </h3>
+              <p>
+                Para ver: tanto código en C++, C#, JavaScript como proyectos de Unity y UnrealEngine entra en mi GitHub.
+                <br> 
+                <a href="https://github.com/IgnacioTapiaMarfil" target="_blank" rel="noopener noreferrer" class="link-button">GitHub</a>
               </p>
             </div>
           </div>
@@ -537,7 +598,7 @@
     </div>
   </div>
 
-  <div class="window" id="game_window" style="display: none;" onmousedown="bring_front('game_window')">
+  <div class="window" id="game_window" style="display: none; top: 15%; left: 25%;" onmousedown="bring_front('game_window')">
     <div class="window-header" onmousedown="start_draging(event, this.parentElement)">
       <span>Juego</span>
       <div class="close-button" onclick="close_window(this)">
@@ -549,7 +610,6 @@
     </div>
   </div>
 
-  <!-- Script para hacer la ventana arrastrable -->
   <script src="src/window_manager.js"></script>
   <script src="src/aboutme_manager.js"></script>
   <script src="src/game_manager.js"></script>

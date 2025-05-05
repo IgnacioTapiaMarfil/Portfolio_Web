@@ -7,7 +7,7 @@
     height: 600px;
     background: silver;
     border: 2px solid black;
-    z-index: 999;
+    z-index: 999; 
     box-shadow: 10px 10px 0px #000000a5;
     overflow: hidden;
 }
@@ -66,7 +66,8 @@
     box-sizing: border-box;
 }
 
-.tabs-button button {
+.tabs-button button 
+{
   font-family: 'Press Start 2P', monospace;
   font-size: 10px;
   background-color: #c0c0c0;
@@ -80,12 +81,14 @@
   outline: none;
 }
 
-.tabs-button button:active {
+.tabs-button button:active 
+{
   border-color: #000 #fff #fff #000;
   background-color: #a0a0a0;
 }
 
-.tabs-button {
+.tabs-button 
+{
   display: flex;
   gap: 8px;
   margin-bottom: 10px;
@@ -157,16 +160,18 @@
 
 .about-photo 
 {
+  margin-top: 50px;
   width: 40%;
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 10px;
   box-sizing: border-box;
 }
 
 .about-photo img 
 {
+  border: 5px solid #000;
+  border-color: #000 #fff #fff #000;
   max-width: 70%;
   max-height: 70%;
 }
@@ -183,100 +188,175 @@
     justify-content: center;
   }
   
-  .carousel 
-  {
-    width: 80%;
-    height: 80%;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .carousel-image 
-  {
-    max-width: 500px;
-    max-height: 500px;
-    display: none;
-    object-fit: contain;
-    cursor: pointer;
-  }
-  
-  .carousel-image.active 
-  {
-    display: block;
-  }
-  
-  .carousel-arrows 
-  {
-    display: flex;
-  }
-  
-  .arrow 
-  {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    background-color: #c0c0c0;
-    border: 3px solid;
-    border-color: #fff #000 #000 #fff;
-    padding: 6px 6px;
-    cursor: pointer;
-    user-select: none;
-    font-family: 'Press Start 2P', monospace;
-    font-size: 30px;
-  }
-  
-  .arrow:active 
-  {
-    background-color: #a0a0a0;
-    border-color: #000 #fff #fff #000;
-  }
+.carousel 
+{
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-image 
+{
+  position: relative;
+  max-width: 550px;
+  max-height: 400px;
+  display: none;
+  object-fit: contain;
+  cursor: pointer;
+  border: 5px solid;
+  border-color: #fff #000 #000 #fff;
+  overflow: hidden;
+}
+
+.carousel-image img
+{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.carousel-image:hover .overlay-text 
+{
+  display: block;
+}
+
+.overlay-text 
+{
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.carousel-image:hover 
+{
+  transform: scale(1.05);
+  filter: brightness(0.7) sepia(1) hue-rotate(190deg);
+}
+
+.carousel-image.active 
+{
+  display: block;
+}
+
+.carousel-arrows 
+{
+  display: flex;
+}
+
+.arrow 
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: #c0c0c0;
+  border: 3px solid;
+  border-color: #fff #000 #000 #fff;
+  padding: 6px 6px;
+  cursor: pointer;
+  user-select: none;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 30px;
+}
+
+.arrow:active 
+{
+  background-color: #a0a0a0;
+  border-color: #000 #fff #fff #000;
+}
 
 
-  #game_window 
-  {
-    width: 700px;
-    height: 400px;
-    display: none;
-    position: absolute;
-  }
-  
-  #game_window canvas 
-  {
-    padding: 10px;
-    background: #9f9e9e;
-    height: calc(100%);
-    width: 100%;
-    border: 3px solid #fff;
-    border-top-color: #000;
-    border-left-color: #000f;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    box-sizing: border-box;
-  }
+#game_window 
+{
+  width: 700px;
+  height: 400px;
+  display: none;
+  position: absolute;
+}
 
-  .link-button
-  {
-    margin-top: 10px;
-    display: inline-block;
-    padding: 6px 12px;
-    color: black;
-    background-color: #c0c0c0;
-    border: 3px solid;
-    border-color: #fff #000 #000 #fff;
-    cursor: pointer;
-    text-decoration: none;
-  }
+#game_window canvas 
+{
+  padding: 10px;
+  background: #9f9e9e;
+  height: calc(100%);
+  width: 100%;
+  border: 3px solid #fff;
+  border-top-color: #000;
+  border-left-color: #000f;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
 
-  .link-button:active {
-    background-color: #a0a0a0;
-    border-color: #000 #fff #fff #000;
-  }
+.link-button
+{
+  margin-top: 10px;
+  display: inline-block;
+  padding: 6px 12px;
+  color: black;
+  background-color: #c0c0c0;
+  border: 3px solid;
+  border-color: #fff #000 #000 #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link-button:active {
+  background-color: #a0a0a0;
+  border-color: #000 #fff #fff #000;
+}
 
 
+.contact-content 
+{
+  padding: 65px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 6px;
+}
+
+.contact-line 
+{
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.contact-line img 
+{
+  width:  80px;
+  height: 80px;
+}
+
+.link-text
+{
+  margin-left: 70px;
+  border: 4px solid;
+  border-color: #fff #000 #000 #fff;
+  padding: 5px;
+  display: flex;
+  width: 500px;
+}
+
+.link-text span
+{
+  align-self: center;
+  margin-left: 100px;
+}
+ 
 
 
 

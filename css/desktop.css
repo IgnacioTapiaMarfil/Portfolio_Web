@@ -1,4 +1,5 @@
-.desktop {
+.desktop 
+{
     display: flex;
     align-items: flex-start;
 }
@@ -24,17 +25,23 @@
     background-color: #000080aa;
 }
 
-.icon span
+.icon span 
 {
-    display: block;
+    display: none;
     margin-top: 15px;
     font-size: 15px;
+    color: white;
+}
+
+.icon:hover span 
+{
+    display: block;
 }
 
 .icon img
 {
-    width: 78px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
 }
 
 .taskbar 
