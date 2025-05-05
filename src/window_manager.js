@@ -53,7 +53,7 @@ function move_window(event)
 {
     if (draggedWindow) 
     {
-        const windowWidth  = draggedWindow.offsetWidth;
+        const windowWidth  = draggedWindow.offsetWidth / 2;
         const windowHeight = draggedWindow.offsetHeight;
         const screenWidth  = window.innerWidth;
         const screenHeight = window.innerHeight;
@@ -61,8 +61,8 @@ function move_window(event)
         let newX = event.clientX - offsetX;
         let newY = event.clientY - offsetY;
 
-        newX = Math.max(0, Math.min(newX, screenWidth  - windowWidth));
-        newY = Math.max(0, Math.min(newY, screenHeight - windowHeight));
+        newX = Math.max(0 - windowWidth * 1.5 , Math.min(newX, screenWidth  - windowWidth / 4 ));
+        newY = Math.max(0, Math.min(newY, screenHeight - windowHeight / 4));
 
         draggedWindow.style.left = newX + 'px';
         draggedWindow.style.top  = newY + 'px';
