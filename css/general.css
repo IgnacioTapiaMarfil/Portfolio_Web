@@ -1,6 +1,7 @@
 html, body
 {
     background-color: #008080;
+    font-size: 16px;
     font-family: 'Press Start 2P', monospace;
     overflow: hidden;
     margin: 0;
