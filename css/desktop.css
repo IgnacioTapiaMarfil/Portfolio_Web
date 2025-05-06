@@ -154,3 +154,30 @@
     z-index: 1000;
     user-select: none;
 }
+
+.leng-button
+{
+    position: fixed;
+    bottom: 1;
+    left: 1;
+    right: 0;
+    /* background-color: #c0c0c0;
+    border: 0.1875rem solid;
+    border-color: #fff #000 #000 #fff; */
+    margin-top: 0.9rem;
+    margin-right: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.leng-button img
+{
+    padding: 0.5rem;
+    width: 4vw;
+    height: auto;
+    user-select: none;
+    pointer-events: none;
+}

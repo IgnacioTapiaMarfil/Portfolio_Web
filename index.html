@@ -47,7 +47,12 @@
       </div>
     </div>
     <div class="desktop-name">
-      <span>Ordenador de Ignacio Tapia</span>
+      <span>Ignacio Tapia</span>
+    </div>
+
+    <div class="leng-button"  onclick = "setLanguage()">
+      <img src="resources/Bandera_España.png" alt="bandera"  data-lang="es"/>
+      <img src="resources/Bandera_Inglaterra.png" alt="bandera"  data-lang="en" style="display: none;"/>
     </div>
 
   </div>
@@ -75,21 +80,38 @@
               <img src="resources/Portfolio_photo.png" alt="Foto de Ignacio" />
             </div>
             <div class="about-text">
-                <p>
-                  Soy Ignacio Tapia, programador y diseñador de videojuegos, con varios años de experiencia en lenguajes como C++, C# y JavaScript además de en herramientas como Unity y Unreal Engine. 
+                <p data-lang="es">
+                  Soy Ignacio Tapia, programador y diseñador de videojuegos, con estudios en la Universidad de diseño y desarrollo, UDIT. Cuento con varios años de experiencia en lenguajes como C++, C# y JavaScript, además de en herramientas como Unity y Unreal Engine. 
                 </p>
-                <p>
-                  En mi formación y en mi etapa como desarrollador he trabajado, personalmente y en equipo, en distintos proyectos ejerciendo de programador principal y a su vez como diseñador y productor. 
+                <p data-lang="es">
+                  En mi formación y en mi etapa como desarrollador he trabajado, personalmente y en equipo, en distintos proyectos ejerciendo de programador principal, diseñador y productor. 
                 </p>
-                <p>
+                <p data-lang="es">
                   Especializado en el desarrollo de videojuegos en motores, considero que mi capacidad para entender la programación a un nivel lógico me permite trabajar sobre cualquier proyecto que se me presente.
                 </p>
-                <p>
-                  Me defino como una persona resolutiva y creativa. Siempre busco estar aprendendiendo algo nuevo o desarrollando una idea que me viene a la cabeza.
+                <p data-lang="es">
+                  Me defino como una persona resolutiva y creativa. Siempre busco estar aprendendiendo y desarrollando nuevas ideas.
                 </p>
-                <p>
-                  Con una gran pasión por desarrollar videojuegos y llevar mis proyectos a cabo, mi objetivo es seguir creciendo como programador en la industria del videojuego.
+                <p data-lang="es">
+                  Con una gran pasión por crear videojuegos y llevar mis proyectos a cabo, mi objetivo es seguir creciendo como desarrollador en la industria del videojuego.
                 </p> 
+
+                <p data-lang="en" style="display: none;">
+                  I'm Ignacio Tapia, a video game programmer and designer, with studies at the University of Design and Technology, UDIT. I have several years of experience in languages such as C++, C#, and JavaScript, as well as in tools like Unity and Unreal Engine.
+                </p>
+                <p data-lang="en" style="display: none;">
+                  Throughout my education and development career, I have worked both individually and in teams on different projects, taking on the role of lead programmer, designer, and producer.
+                </p>
+                <p data-lang="en" style="display: none;">
+                  Specializing in engine-based game development, I believe my ability to understand programming from a logical perspective allows me to work on any project that comes my way.
+                </p>
+                <p data-lang="en" style="display: none;">
+                  I consider myself a creative and resourceful person. I'm always looking to learn and develop new ideas.
+                </p>
+                <p data-lang="en" style="display: none;">
+                  With a strong passion for creating video games and bringing my projects to life, my goal is to keep growing as a developer in the video game industry.
+                </p>
+                
             </div>
           </div>
         </div>
@@ -126,7 +148,7 @@
               </div>
               <div class="carousel-image">
                 <img src="resources/Another.png" onclick="open_window('other_window')">
-                <div class="overlay-text">Otros Proyectos y Códigos</div>
+                <div class="overlay-text"><span data-lang="es">Otros Proyectos y Códigos</span> <span data-lang="en" style="display: none;">Other proyects and codes</span></div>
               </div>
             </div>
             <div class="carousel-arrows">
@@ -157,53 +179,82 @@
 
   <div class="window" id="TheMiau_window" style="display: none; top: 11%; left: 21%;" onmousedown="bring_front('TheMiau_window')">
     <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
-        <span>TheMiaTheMiauAndTheMiau</span>
-
-        <div class="close-button" onclick="close_window(this)">
-            <span>X</span>
-        </div>
-
+      <span>TheMiaTheMiauAndTheMiau</span>
+  
+      <div class="close-button" onclick="close_window(this)">
+        <span>X</span>
+      </div>
     </div>
-
+  
     <div class="window-content">
       <div class="project-content">
         <div class="project-container">
-          <div class = "project-line"> 
+          <div class="project-line"> 
             <div class="project-photo">
               <img src="resources/TheMiauTheMiau_Image.png" alt="Foto TheMiau">
             </div>
             <div class="project-text">
-              <h3>
-                Descripción
-                <br> 
-                --------------------------
-              </h3>
-
-              <p>
-                Juegos de disparos en el que tendras que acertar a tantas frutas como puedas. Realizado entre dos personas para ScoerSpace Jam #27 de Itch.io.
-                <br>
-              </p>
-
-              <h3>
-                Cargos
-                <br> 
-                --------------------------
-              </h3>
-
-              <p>
-                Programador y Diseñador.
-                <br>
-              </p>
-
-              <h3>
-                Link
-                <br>
-                --------------------------
-              </h3>
-
-              <p>
-                <a href="https://press-for-coffee-tomiwr.itch.io/the-miau-the-miau-and-the-miau" target="_blank" rel="noopener noreferrer" class="link-button">Iich.io</a>
-              </p>
+  
+              <!-- Español -->
+              <div data-lang="es">
+                <h3>
+                  Descripción
+                  <br> 
+                  --------------------------
+                </h3>
+                <p>
+                  Juego de disparos en el que tendrás que acertar a tantas frutas como puedas. Realizado entre dos personas para ScoreSpace Jam #27 de Itch.io.
+                </p>
+  
+                <h3>
+                  Cargos
+                  <br> 
+                  --------------------------
+                </h3>
+                <p>
+                  Programador y Diseñador.
+                </p>
+  
+                <h3>
+                  Link
+                  <br>
+                  --------------------------
+                </h3>
+                <p>
+                  <a href="https://press-for-coffee-tomiwr.itch.io/the-miau-the-miau-and-the-miau" target="_blank" rel="noopener noreferrer" class="link-button">Itch.io</a>
+                </p>
+              </div>
+  
+              <!-- Inglés -->
+              <div data-lang="en" style="display: none;">
+                <h3>
+                  Description
+                  <br> 
+                  --------------------------
+                </h3>
+                <p>
+                  A shooting game where you have to hit as many fruits as you can. Created by two people for ScoreSpace Jam #27 on Itch.io.
+                </p>
+  
+                <h3>
+                  Roles
+                  <br> 
+                  --------------------------
+                </h3>
+                <p>
+                  Programmer and Designer.
+                </p>
+  
+                <h3>
+                  Link
+                  <br>
+                  --------------------------
+                </h3>
+                <p>
+                  <a href="https://press-for-coffee-tomiwr.itch.io/the-miau-the-miau-and-the-miau" target="_blank" rel="noopener noreferrer" class="link-button">Itch.io</a>
+                </p>
+              </div>
+  
             </div>
           </div>
         </div>
@@ -211,55 +262,84 @@
     </div>
   </div>
 
-  <div class="window" id="Tiny_window" style="display: none; top: 12%; left: 22%;" onmousedown="bring_front('Tiny_window')">
+  <div class="window" id="Tiny_window" style="display: none; top: 12%; left: 22%;" onmousedown="bring_front('Tiny_window')"> 
     <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
-        <span>TinyPocket</span>
-
-        <div class="close-button" onclick="close_window(this)">
-            <span>X</span>
-        </div>
-
+      <span>TinyPocket</span>
+  
+      <div class="close-button" onclick="close_window(this)">
+        <span>X</span>
+      </div>
     </div>
-
+  
     <div class="window-content">
       <div class="project-content">
         <div class="project-container">
-          <div class = "project-line"> 
+          <div class="project-line"> 
             <div class="project-photo">
-              <img src="resources/TinyPocker_Image.png" alt="Foto TheMiau">
+              <img src="resources/TinyPocker_Image.png" alt="Foto TinyPocket">
             </div>
             <div class="project-text">
-              <h3>
-                Descripción
-                <br> 
-                --------------------------
-              </h3>
-
-              <p>
-                Juegos en el que tendrás que atravesar la mazmorra con solo un objeto. Realizado entre dos personas para la TavernGameJam - Summer'24.
-                <br>
-              </p>
-
-              <h3>
-                Cargos
-                <br> 
-                --------------------------
-              </h3>
-
-              <p>
-                Programador y Diseñador.
-                <br>
-              </p>
-
-              <h3>
-                Link
-                <br>
-                --------------------------
-              </h3>
-
-              <p>
-                <a href="https://mikeljulian.itch.io/tiny-pocket" target="_blank" rel="noopener noreferrer" class="link-button">Iich.io</a>
-              </p>
+  
+              <!-- Español -->
+              <div data-lang="es">
+                <h3>
+                  Descripción
+                  <br> 
+                  --------------------------
+                </h3>
+                <p>
+                  Juego en el que tendrás que atravesar la mazmorra con solo un objeto. Realizado entre dos personas para la TavernGameJam - Summer'24.
+                </p>
+  
+                <h3>
+                  Cargos
+                  <br> 
+                  --------------------------
+                </h3>
+                <p>
+                  Programador y Diseñador.
+                </p>
+  
+                <h3>
+                  Link
+                  <br>
+                  --------------------------
+                </h3>
+                <p>
+                  <a href="https://mikeljulian.itch.io/tiny-pocket" target="_blank" rel="noopener noreferrer" class="link-button">Itch.io</a>
+                </p>
+              </div>
+  
+              <!-- Inglés -->
+              <div data-lang="en" style="display: none;">
+                <h3>
+                  Description
+                  <br> 
+                  --------------------------
+                </h3>
+                <p>
+                  A game where you must cross the dungeon using only one item. Created by two people for TavernGameJam - Summer'24.
+                </p>
+  
+                <h3>
+                  Roles
+                  <br> 
+                  --------------------------
+                </h3>
+                <p>
+                  Programmer and Designer.
+                </p>
+  
+                <h3>
+                  Link
+                  <br>
+                  --------------------------
+                </h3>
+                <p>
+                  <a href="https://mikeljulian.itch.io/tiny-pocket" target="_blank" rel="noopener noreferrer" class="link-button">Itch.io</a>
+                </p>
+              </div>
+  
             </div>
           </div>
         </div>
@@ -268,32 +348,32 @@
   </div>
 
   <div class="window" id="Dignity_window" style="display: none; top: 13%; left: 23%;" onmousedown="bring_front('Dignity_window')">
-    <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
-        <span>DignityPong</span>
+  <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
+    <span>DignityPong</span>
 
-        <div class="close-button" onclick="close_window(this)">
-            <span>X</span>
-        </div>
-
+    <div class="close-button" onclick="close_window(this)">
+      <span>X</span>
     </div>
+  </div>
 
-    <div class="window-content">
-      <div class="project-content">
-        <div class="project-container">
-          <div class = "project-line"> 
-            <div class="project-photo">
-              <img src="resources/DignityPong.png" alt="Foto TheMiau">
-            </div>
-            <div class="project-text">
+  <div class="window-content">
+    <div class="project-content">
+      <div class="project-container">
+        <div class="project-line"> 
+          <div class="project-photo">
+            <img src="resources/DignityPong.png" alt="Foto DignityPong">
+          </div>
+          <div class="project-text">
+
+            <!-- Español -->
+            <div data-lang="es">
               <h3>
                 Descripción
                 <br> 
                 --------------------------
               </h3>
-
               <p>
-                Dos dignos caballeros se enfrenta en una dura partida de Pong.
-                <br>
+                Dos dignos caballeros se enfrentan en una dura partida de Pong.
               </p>
 
               <h3>
@@ -301,10 +381,8 @@
                 <br> 
                 --------------------------
               </h3>
-
               <p>
                 Programador y Diseñador.
-                <br>
               </p>
 
               <h3>
@@ -312,9 +390,38 @@
                 <br>
                 --------------------------
               </h3>
-
               <p>
-                <a href="https://gaming-boxer.itch.io/dignity-pong" target="_blank" rel="noopener noreferrer" class="link-button">Iich.io</a>
+                <a href="https://gaming-boxer.itch.io/dignity-pong" target="_blank" rel="noopener noreferrer" class="link-button">Itch.io</a>
+              </p>
+            </div>
+
+            <!-- Inglés -->
+            <div data-lang="en" style="display: none;">
+              <h3>
+                Description
+                <br> 
+                --------------------------
+              </h3>
+              <p>
+                Two noble knights face off in an intense match of Pong.
+              </p>
+
+              <h3>
+                Roles
+                <br> 
+                --------------------------
+              </h3>
+              <p>
+                Programmer and Designer.
+              </p>
+
+              <h3>
+                Link
+                <br>
+                --------------------------
+              </h3>
+              <p>
+                <a href="https://gaming-boxer.itch.io/dignity-pong" target="_blank" rel="noopener noreferrer" class="link-button">Itch.io</a>
               </p>
             </div>
           </div>
@@ -322,34 +429,35 @@
       </div>
     </div>
   </div>
+</div>
 
-  <div class="window" id="Choi_window" style="display: none; top: 14%; left: 24%;" onmousedown="bring_front('Choi_window')">
-    <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
-        <span>FrancrazeSimulator</span>
+<div class="window" id="Choi_window" style="display: none; top: 14%; left: 24%;" onmousedown="bring_front('Choi_window')">
+  <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
+    <span>FrancrazeSimulator</span>
 
-        <div class="close-button" onclick="close_window(this)">
-            <span>X</span>
-        </div>
-
+    <div class="close-button" onclick="close_window(this)">
+      <span>X</span>
     </div>
+  </div>
 
-    <div class="window-content">
-      <div class="project-content">
-        <div class="project-container">
-          <div class = "project-line"> 
-            <div class="project-photo">
-              <img src="resources/Francrace.png" alt="Foto TheMiau">
-            </div>
-            <div class="project-text">
+  <div class="window-content">
+    <div class="project-content">
+      <div class="project-container">
+        <div class="project-line"> 
+          <div class="project-photo">
+            <img src="resources/Francrace.png" alt="Foto FrancrazeSimulator">
+          </div>
+          <div class="project-text">
+
+            <!-- Español -->
+            <div data-lang="es">
               <h3>
                 Descripción
                 <br> 
                 --------------------------
               </h3>
-
               <p>
-                Juego de ritmo en el que tendrás que bloquar todo lo que te lancen!!
-                <br>
+                Juego de ritmo en el que tendrás que bloquear todo lo que te lancen.
               </p>
 
               <h3>
@@ -357,10 +465,8 @@
                 <br> 
                 --------------------------
               </h3>
-
               <p>
                 Programador.
-                <br>
               </p>
 
               <h3>
@@ -368,358 +474,419 @@
                 <br>
                 --------------------------
               </h3>
-
               <p>
-                <a href="https://mickeldog.itch.io/fancraze-simulator" target="_blank" rel="noopener noreferrer" class="link-button">Iich.io</a>
+                <a href="https://mickeldog.itch.io/fancraze-simulator" target="_blank" rel="noopener noreferrer" class="link-button">Itch.io</a>
               </p>
             </div>
+
+            <!-- Inglés -->
+            <div data-lang="en" style="display: none;">
+              <h3>
+                Description
+                <br> 
+                --------------------------
+              </h3>
+              <p>
+                Rhythm game where you have to block everything thrown at you!
+              </p>
+
+              <h3>
+                Roles
+                <br> 
+                --------------------------
+              </h3>
+              <p>
+                Programmer.
+              </p>
+
+              <h3>
+                Link
+                <br>
+                --------------------------
+              </h3>
+              <p>
+                <a href="https://mickeldog.itch.io/fancraze-simulator" target="_blank" rel="noopener noreferrer" class="link-button">Itch.io</a>
+              </p>
+            </div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="window" id="zep_window" style="display: none; top: 15%; left: 25%;" onmousedown="bring_front('zep_window')">
-    <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
-        <span>ZEP</span>
-
-        <div class="close-button" onclick="close_window(this)">
-            <span>X</span>
-        </div>
-
+<div class="window" id="zep_window" style="display: none; top: 15%; left: 25%;" onmousedown="bring_front('zep_window')">
+  <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
+    <span>ZEP</span>
+    <div class="close-button" onclick="close_window(this)">
+      <span>X</span>
     </div>
+  </div>
 
-    <div class="window-content">
-      <div class="project-content">
-        <div class="project-container">
-          <div class = "project-line"> 
-            <div class="project-photo">
-              <img src="resources/Zep_Project_Image.png" alt="Foto de Zep">
+  <div class="window-content">
+    <div class="project-content">
+      <div class="project-container">
+        <div class="project-line"> 
+          <div class="project-photo">
+            <img src="resources/Zep_Project_Image.png" alt="Foto de Zep">
+          </div>
+          <div class="project-text">
+
+            <!-- Español -->
+            <div data-lang="es">
+              <h3>Descripción<br>--------------------------</h3>
+              <p>Juego realizado con C++ en Unreal Engine 5.4.</p>
+
+              <h3>Cargos<br>--------------------------</h3>
+              <p>
+                Lead programmer, implementación de assets y arte, diseño de mecánicas.
+              </p>
+
+              <h3>Estado actual<br>--------------------------</h3>
+              <p>
+                Más de 30 clases creadas por mí, todas escalables.<br>
+                Contamos con una demo llevada a CyL InGame 2025.<br>
+                <a href="https://arrecifegames.itch.io/zep-demo-for-cyl-games-show-boss-fight-prototype" target="_blank" rel="noopener noreferrer" class="link-button">ZEP Demo</a>
+              </p>
             </div>
-            <div class="project-text">
-              <h3>
-                Descripción
-                <br> 
-                --------------------------
-              </h3>
 
+            <!-- Inglés -->
+            <div data-lang="en" style="display: none;">
+              <h3>Description<br>--------------------------</h3>
+              <p>Game developed in C++ using Unreal Engine 5.4.</p>
+
+              <h3>Roles<br>--------------------------</h3>
               <p>
-                Juego realizado con C++ en Unreal Engine 5.4.
-                <br>
+                Lead programmer, responsible for asset and art integration, and game mechanics design.
               </p>
 
-              <h3>
-                Cargos
-                <br> 
-                --------------------------
-              </h3>
-
+              <h3>Current status<br>--------------------------</h3>
               <p>
-                En este proyecto he ejercido el cargo de Lead programmer, además de encargarme de gran parte de la implementación de assets y arte dentro del motor 
-                y del diseño de diversas mecánicas y funcionamientos del juego.
-                <br>
-              </p>
-
-              <h3>
-                Estado actual
-                <br> 
-                --------------------------
-              </h3>
-
-              <p>
-                A fecha de hoy, el proyecto cuenta con más de 30 clases creadas enteramente por mí, todas estructuradas y totalmente reescalables. <br> 
-                Contamos con una demo inicial, la cual llevamos a la feria CyL InGame 2025.
-                <br> 
+                Over 30 fully scalable classes created by me.<br>
+                We presented a demo at CyL InGame 2025.<br>
                 <a href="https://arrecifegames.itch.io/zep-demo-for-cyl-games-show-boss-fight-prototype" target="_blank" rel="noopener noreferrer" class="link-button">ZEP Demo</a>
               </p>
             </div>
           </div>
-          <div class = "project-line"style="justify-content: center;"> 
-            <div class="project-text" style="text-align: center;">
-              <h3>
-                Partes destacables
-                <br> 
-                ----------------------------------
-              </h3>
-            </div>
+        </div>
+
+        <!-- Título: Partes destacables -->
+        <div class="project-line" style="justify-content: center;"> 
+          <div class="project-text" style="text-align: center;">
+            <div data-lang="es"><h3>Partes destacables<br>----------------------------------</h3></div>
+            <div data-lang="en" style="display: none;"><h3>Highlighted parts<br>----------------------------------</h3></div>
           </div>
-         <div class = "project-line"> 
-            <div class="project-text">
-              <h3>
-                Sistema de Diálogos 
-                <br> 
-                ----------------------------------
-              </h3>
+        </div>
 
+        <!-- Sistema de Diálogos -->
+        <div class="project-line"> 
+          <div class="project-text">
+            <div data-lang="es">
+              <h3>Sistema de Diálogos<br>----------------------------------</h3>
               <p>
-                Para ZEP he diseñado y programado un sistema de diálogos desde 0. 
-                <br>
-                Este sistema que funciona a través de Structs y DataTables está diseñado para que cada NPC tenga su propio estado en el juego en función de: cuántas veces has hablado con él ahora, 
-                cuántas veces lo has hecho a lo largo del juego (Medidor de relación) y otros medidores que indican la fase del juego en la que estas.
+                Sistema de diálogos con Structs y DataTables. Cada NPC tiene estados distintos según tus interacciones y el progreso del juego.
               </p>
-
               <p>
-                Según estos medidores, cuando interactúas con el NPC, el Componente de diálogo te lanzará, si existe, el diálogo correspondiente a el estado del NPC
+                El componente de diálogo lanza el texto adecuado según los medidores enviados como strings.
               </p>
-
               <p>
-                Lo interesante del Componente de Diálogo es que solo le enviamos estos medidores en forma de string y él busca la conversación que tiene que lanzar en la DataTable. 
-                Esto nos permite añadir este componente a otros objetos y simplemente estableciendo un sistema de strings o datos ya tenemos el sistema de diálogo establecido.
+                Este sistema es reutilizable con solo configurar los datos, ideal para otros objetos o NPCs.
               </p>
             </div>
-          </div>
-          <div class = "project-line"> 
-            <div class="project-text">
-              <h3>
-                Minijuegos
-                <br> 
-                ----------------------------------
-              </h3>
 
+            <div data-lang="en" style="display: none;">
+              <h3>Dialogue System<br>----------------------------------</h3>
               <p>
-                Los minijuegos en ZEP están todos derivados de un objeto padre, esto es debido a que todos comparten la misma estructura principal.
-                <br>
-                Después en cada minijuego solo tenemos que añadir sus acciones.
-              </p>
-
-              <p>
-                Estos minijuegos están pensados para poder ser creados en cualquier momento. Así si necesitamos realizar minijuegos fuera del sistema de pesca la implementación seria mas sencilla.
-              </p>
-            </div>
-          </div>
-          <div class = "project-line"> 
-            <div class="project-text">
-              <h3>
-                Objetos
-                <br> 
-                ----------------------------------
-              </h3>
-
-              <p>
-                El sistema de objetos de ZEP funciona a partir de Structs.    
-              </p>
-
-              <p>
-                Un Struct general que incluye: la información que comparten todos los objetos más un struct del tipo concreto del objeto.
-                <br>
-                De esta forma si queremos añadir más tipos de objetos al juego solo tenemos que crear su struct para ese tipo de objeto y añadirlo a los structs que se pueden meter en el general.
-              </p>
-
-              <p>
-                Después, creamos una tabla de datos con ese Struct general y ahí creamos todos los objetos que vamos a utilizar en el juego, cada uno con un ID individual para poder identificarlos y acceder a cualquiera fácilmente.
-              </p>
-            </div>
-          </div>
-          <div class = "project-line"style="justify-content: center;"> 
-            <div class="project-text" style="text-align: center;">
-              <h3>
-                Más detalles
-                <br> 
-                ----------------------------------
-              </h3>
-            </div>
-          </div>
-          <div class = "project-line"> 
-            <div class="project-text">
-              <p>
-                Para este proyecto también he creado y organizado un repositorio que hemos manejado con SourceTree.
-                <br>
-                Además, he utilizado herramientas como figma, canva y excel para la organización y diseño de las mecánicas y el equipo.
+                Dialogue system built from scratch using Structs and DataTables. NPCs change based on interaction history and game phase.
               </p>
               <p>
-                El código de este proyecto no está disponible debido a temas de copyright.
+                The Dialogue Component sends strings with meter values and retrieves the correct dialogue from the DataTable.
+              </p>
+              <p>
+                This makes the system easily reusable for any object or NPC with simple data configuration.
               </p>
             </div>
           </div>
         </div>
+
+        <!-- Minijuegos -->
+        <div class="project-line"> 
+          <div class="project-text">
+            <div data-lang="es">
+              <h3>Minijuegos<br>----------------------------------</h3>
+              <p>
+                Todos los minijuegos derivan de un objeto padre, compartiendo una estructura base común.
+              </p>
+              <p>
+                Esto permite añadir nuevos fácilmente, incluso fuera del sistema de pesca.
+              </p>
+            </div>
+
+            <div data-lang="en" style="display: none;">
+              <h3>Minigames<br>----------------------------------</h3>
+              <p>
+                All minigames inherit from a parent object with a shared structure.
+              </p>
+              <p>
+                This allows for easy creation of new ones, even beyond the fishing system.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Objetos -->
+        <div class="project-line"> 
+          <div class="project-text">
+            <div data-lang="es">
+              <h3>Objetos<br>----------------------------------</h3>
+              <p>
+                Sistema de objetos basado en Structs con un struct general que engloba structs específicos.
+              </p>
+              <p>
+                Ampliable fácilmente: basta con crear un nuevo struct y añadirlo.
+              </p>
+              <p>
+                Se almacenan en una DataTable con IDs únicos para fácil acceso.
+              </p>
+            </div>
+
+            <div data-lang="en" style="display: none;">
+              <h3>Items<br>----------------------------------</h3>
+              <p>
+                Item system based on Structs: a general struct contains all common info plus a specific-type struct.
+              </p>
+              <p>
+                Easily expandable by adding new type structs.
+              </p>
+              <p>
+                Items are stored in a DataTable with unique IDs for easy lookup.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Más detalles -->
+        <div class="project-line" style="justify-content: center;"> 
+          <div class="project-text" style="text-align: center;">
+            <div data-lang="es"><h3>Más detalles<br>----------------------------------</h3></div>
+            <div data-lang="en" style="display: none;"><h3>More details<br>----------------------------------</h3></div>
+          </div>
+        </div>
+
+        <div class="project-line"> 
+          <div class="project-text">
+            <div data-lang="es">
+              <p>
+                He creado y gestionado un repositorio con SourceTree. <br>
+                Utilicé herramientas como Figma, Canva y Excel para organización y diseño.
+              </p>
+              <p>
+                El código no está disponible por razones de copyright.
+              </p>
+            </div>
+
+            <div data-lang="en" style="display: none;">
+              <p>
+                I created and managed a repository using SourceTree.<br>
+                Used tools like Figma, Canva, and Excel for organization and design.
+              </p>
+              <p>
+                The source code is not available due to copyright reasons.
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
+</div>
 
-  <div class="window" id="cannon_window" style="display: none; top: 16%; left: 26%;" onmousedown="bring_front('cannon_window')">
-    <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
-        <span>BlasterCannon</span>
+<div class="window" id="cannon_window" style="display: none; top: 16%; left: 26%;" onmousedown="bring_front('cannon_window')">
+  <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
+      <span>BlasterCannon</span>
 
-        <div class="close-button" onclick="close_window(this)">
-            <span>X</span>
+      <div class="close-button" onclick="close_window(this)">
+          <span>X</span>
+      </div>
+  </div>
+
+  <div class="window-content">
+    <div class="project-content">
+      <div class="project-container">
+        <div class="project-line"> 
+          <div class="project-photo">
+            <img src="resources/BlasterCannon_Project.png" alt="Foto de Ignacio">
+          </div>
+          <div class="project-text">
+            
+            <!-- Español -->
+            <div data-lang="es">
+              <h3>Descripción<br>--------------------------</h3>
+              <p>Juego realizado con JavaScript, HTML y Css.</p>
+
+              <h3>Cargos<br>--------------------------</h3>
+              <p>Para este proyecto realicé toda la programación, así como el diseño del juego.</p>
+
+              <h3>Estado actual<br>--------------------------</h3>
+              <p>Para probar el proyecto puedes encontrarlo en mi página de Itch.io.<br>
+              <a href="https://n-tapia.itch.io/blaster-cannon" target="_blank" rel="noopener noreferrer" class="link-button">BlasterCannon</a></p>
+            </div>
+
+            <!-- Inglés -->
+            <div data-lang="en" style="display: none;">
+              <h3>Description<br>--------------------------</h3>
+              <p>Game developed with JavaScript, HTML, and CSS.</p>
+
+              <h3>Roles<br>--------------------------</h3>
+              <p>For this project, I did all the programming as well as the game design.</p>
+
+              <h3>Current status<br>--------------------------</h3>
+              <p>You can try the project on my Itch.io page.<br>
+              <a href="https://n-tapia.itch.io/blaster-cannon" target="_blank" rel="noopener noreferrer" class="link-button">BlasterCannon</a></p>
+            </div>
+          </div>
         </div>
 
-    </div>
+        <!-- Título: Partes destacables -->
+        <div class="project-line" style="justify-content: center;"> 
+          <div class="project-text" style="text-align: center;">
+            <div data-lang="es"><h3>Partes destacables<br>----------------------------------</h3></div>
+            <div data-lang="en" style="display: none;"><h3>Highlighted parts<br>----------------------------------</h3></div>
+          </div>
+        </div>
 
-    <div class="window-content">
-      <div class="project-content">
-        <div class="project-container">
-          <div class = "project-line"> 
-            <div class="project-photo">
-              <img src="resources/BlasterCannon_Project.png" alt="Foto de Ignacio">
+        <!-- Sistema de Físicas -->
+        <div class="project-line"> 
+          <div class="project-text">
+            <div data-lang="es">
+              <h3>Sistema de Físicas<br>----------------------------------</h3>
+              <p>Para este juego, después de implementar y trastear con librerías de JS como Matters o Planck, decidí gestionar yo mismo las físicas, debido a que lo que yo necesitaba era más simple.</p>
+
+              <p>Para esto añadí diversos comportamientos a las pelotas para simular el rebote, la caída y la rotación de una forma más o menos arcade que es lo que mejor quedaba con el concepto del juego.</p>
             </div>
-            <div class="project-text">
-              <h3>
-                Descripción
-                <br> 
-                --------------------------
-              </h3>
 
-              <p>
-                Juego realizado con JavaScript, HTML y Css.
-                <br>
-              </p>
+            <div data-lang="en" style="display: none;">
+              <h3>Physics System<br>----------------------------------</h3>
+              <p>For this game, after experimenting with JS libraries like Matters or Planck, I decided to manage the physics myself since what I needed was simpler.</p>
 
-              <h3>
-                Cargos
-                <br> 
-                --------------------------
-              </h3>
-
-              <p>
-                Para este proyecto realicé toda la programación, así como el diseño del juego.
-                <br>
-              </p>
-
-              <h3>
-                Estado actual
-                <br> 
-                --------------------------
-              </h3>
-
-              <p>
-                Para probar el proyecto puedes encontrarlo en mi página de Itch.io.
-                <br> 
-                <a href="https://n-tapia.itch.io/blaster-cannon" target="_blank" rel="noopener noreferrer" class="link-button">BlasterCannon</a>
-              </p>
+              <p>I added various behaviors to the balls to simulate bouncing, falling, and rotating in a more or less arcade style, which fit best with the game's concept.</p>
             </div>
           </div>
-          <div class = "project-line"style="justify-content: center;"> 
-            <div class="project-text" style="text-align: center;">
-              <h3>
-                Partes destacables
-                <br> 
-                ----------------------------------
-              </h3>
+        </div>
+
+        <!-- Partículas -->
+        <div class="project-line"> 
+          <div class="project-text">
+            <div data-lang="es">
+              <h3>Partículas<br>----------------------------------</h3>
+              <p>Además creé mi propio sistema de partículas, este es un sistema simple en el que se genera un número aleatorio de partículas, con velocidad y tamaños aleatorios y estas se van volviendo translúcidas hasta desaparecer.<br>Cuando estas están invisibles se eliminan.</p>
+            </div>
+
+            <div data-lang="en" style="display: none;">
+              <h3>Particles<br>----------------------------------</h3>
+              <p>I also created my own particle system, which is a simple system where a random number of particles is generated with random speeds and sizes. They gradually become translucent until they disappear.<br>Once invisible, they are removed.</p>
             </div>
           </div>
-         <div class = "project-line"> 
-            <div class="project-text">
-              <h3>
-                Sistema de Físicas 
-                <br> 
-                ----------------------------------
-              </h3>
+        </div>
 
-              <p>
-                Para este juego, después de implementar y trastear con librerías de JS como Matters o Planck, decidí gestionar yo mismo las físicas, debido a que lo que yo necesitaba era más simple.
-              </p>
+        <!-- LeaderBoard con FireBase -->
+        <div class="project-line"> 
+          <div class="project-text">
+            <div data-lang="es">
+              <h3>LeaderBoard con FireBase<br>----------------------------------</h3>
+              <p>Para la implementación de la LeaderBoard utilicé la API de FireBase.</p>
 
-              <p>
-                Para esto añadí diversos comportamientos a las pelotas para simular el rebote, la caída y la rotación de una forma más o menos arcade que es lo que mejor quedaba con el concepto del juego.
-              </p>
+              <p>Ahí creé con FirestoreDatabase una base de datos con una tabla para guardar todas las puntuaciones. Cada una con un nombre y una puntuación.</p>
+
+              <p>Después, llamo a esta tabla desde un archivo JS para introducir la puntuación.<br>También hice una función para sacar los datos y generar una LeaderBoard con las puntuaciones de los 5 mejores.</p>
+            </div>
+
+            <div data-lang="en" style="display: none;">
+              <h3>LeaderBoard with FireBase<br>----------------------------------</h3>
+              <p>I used the FireBase API to implement the LeaderBoard.</p>
+
+              <p>There, I created a FirestoreDatabase with a table to store all the scores. Each score is associated with a name and a value.</p>
+
+              <p>Then, I call this table from a JS file to insert the scores.<br>I also made a function to fetch the data and generate a LeaderBoard with the top 5 scores.</p>
             </div>
           </div>
-          <div class = "project-line"> 
-            <div class="project-text">
-              <h3>
-                Partículas
-                <br> 
-                ----------------------------------
-              </h3>
+        </div>
 
-              <p>
-                Además cree mi propio sistema de partículas, este es un sistema simple en el que se genera un número aleatorio de partículas, con velocidad y tamaños aleatorios y estas se van volviendo translúcidas hasta desaparecer.
-                <br>
-                Cuando estas están invisibles se eliminan.
-              </p>
-
-            </div>
+        <!-- Más cosas -->
+        <div class="project-line" style="justify-content: center;"> 
+          <div class="project-text" style="text-align: center;">
+            <div data-lang="es"><h3>Más cosas<br>----------------------------------</h3></div>
+            <div data-lang="en" style="display: none;"><h3>More things<br>----------------------------------</h3></div>
           </div>
-          <div class = "project-line"> 
-            <div class="project-text">
-              <h3>
-                LeaderBoard con FireBase
-                <br> 
-                ----------------------------------
-              </h3>
+        </div>
 
-              <p>
-                Para la implementación de la LeaderBoard utilicé la API de FireBase.
-              </p>
-
-              <p>
-                Ahí cree con FirestoreDatabase una base de datos con una tabla para guardar todas las puntuaciones. Cada una con un nombre y una puntuación.
-              </p>
-
-              <p>
-                Después, llamo a esta tabla desde un archivo JS par introducir la puntuación. 
-                También hice una función para sacar los datos y generar una LeaderBoard con las puntuaciones de los 5 mejores.
-              </p>
+        <!-- GitHub -->
+        <div class="project-line"> 
+          <div class="project-text">
+            <div data-lang="es">
+              <p>Para ver el código entero de este proyecto se puede ver en mi github.</p>
+              <a href="https://github.com/IgnacioTapiaMarfil/BlasterCannon" target="_blank" rel="noopener noreferrer" class="link-button">GitHub/BlasterCannon</a>
             </div>
-          </div>
-          <div class = "project-line"style="justify-content: center;"> 
-            <div class="project-text" style="text-align: center;">
-              <h3>
-                Más cosas
-                <br> 
-                ----------------------------------
-              </h3>
-            </div>
-          </div>
-          <div class = "project-line"> 
-            <div class="project-text">
-              <p>
-                Para ver el código entero de este proyecto se puede ver en mi github.
-              </p>
+
+            <div data-lang="en" style="display: none;">
+              <p>You can view the full code for this project on my GitHub.</p>
               <a href="https://github.com/IgnacioTapiaMarfil/BlasterCannon" target="_blank" rel="noopener noreferrer" class="link-button">GitHub/BlasterCannon</a>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
+</div>
+</div>
 
-  <div class="window" id="other_window" style="display: none; top: 17%; left: 27%;" onmousedown="bring_front('other_window')">
-    <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
-        <span>Other</span>
-
-        <div class="close-button" onclick="close_window(this)">
-            <span>X</span>
-        </div>
-
+<div class="window" id="other_window" style="display: none; top: 17%; left: 27%;" onmousedown="bring_front('other_window')">
+  <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
+    <span>Other</span>
+    <div class="close-button" onclick="close_window(this)">
+      <span>X</span>
     </div>
+  </div>
 
-    <div class="window-content">
-      <div class="project-content">
-        <div class="project-container">
-          <div class = "project-line"style="justify-content: center;"> 
-            <div class="project-text" style="text-align: center;">
-              <h3>
-                Más juegos
-                <br> 
-                ----------------------------------
-              </h3>
-              <p>
-                Para ver algunos de los juegos que he hecho entra en mi itch.io.
-                <br> 
-                <a href="https://n-tapia.itch.io/" target="_blank" rel="noopener noreferrer" class="link-button">Iich.io</a>
-              </p>
-            </div>
+  <div class="window-content">
+    <div class="project-content">
+      <div class="project-container">
+        <div class="project-line" style="justify-content: center;"> 
+          <div class="project-text" style="text-align: center;">
+            <h3>
+              Más juegos
+              <br> 
+              ----------------------------------
+            </h3>
+            <p>
+              Para ver algunos de los juegos que he hecho entra en mi itch.io.
+              <br> 
+              <a href="https://n-tapia.itch.io/" target="_blank" rel="noopener noreferrer" class="link-button">Itch.io</a>
+            </p>
           </div>
-          <div class = "project-line"style="justify-content: center;"> 
-            <div class="project-text" style="text-align: center;">
-              <h3>
-                Más codigo
-                <br> 
-                ----------------------------------
-              </h3>
-              <p>
-                Para ver: tanto código en C++, C#, JavaScript como proyectos de Unity y UnrealEngine entra en mi GitHub.
-                <br> 
-                <a href="https://github.com/IgnacioTapiaMarfil" target="_blank" rel="noopener noreferrer" class="link-button">GitHub</a>
-              </p>
-            </div>
+        </div>
+        
+        <div class="project-line" style="justify-content: center;"> 
+          <div class="project-text" style="text-align: center;">
+            <h3>
+              Más código
+              <br> 
+              ----------------------------------
+            </h3>
+            <p>
+              Para ver tanto código en C++, C#, JavaScript como proyectos de Unity y Unreal Engine entra en mi GitHub.
+              <br> 
+              <a href="https://github.com/IgnacioTapiaMarfil" target="_blank" rel="noopener noreferrer" class="link-button">GitHub</a>
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
   <div class="window" id="game_window" style="display: none; top: 18%; left: 28%;" onmousedown="bring_front('game_window')">
     <div class="window-header" onmousedown="start_draging(event, this.parentElement)">

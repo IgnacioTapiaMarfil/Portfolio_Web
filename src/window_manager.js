@@ -23,6 +23,16 @@ function open_window(window)
   }
 }
 
+let lang = "es";
+
+function setLanguage() {
+  lang = lang === "es" ? "en" : "es";
+
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+  });
+}
+
 function close_window(button)
 {
   const window = button.closest('.window');
