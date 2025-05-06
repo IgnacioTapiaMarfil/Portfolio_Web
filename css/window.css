@@ -69,7 +69,7 @@
 .tabs-button button 
 {
   font-family: 'Press Start 2P', monospace;
-  font-size: 10px;
+  font-size: 20px;
   background-color: #c0c0c0;
   border: 2px solid;
   border-color: #fff #000 #000 #fff;
@@ -129,7 +129,7 @@
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: auto;
-  font-size: 12px;
+  font-size: 22px;
   line-height: 1.4;
 }
 
@@ -268,7 +268,7 @@
   cursor: pointer;
   user-select: none;
   font-family: 'Press Start 2P', monospace;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .arrow:active 
@@ -313,7 +313,8 @@
   text-decoration: none;
 }
 
-.link-button:active {
+.link-button:active 
+{
   background-color: #a0a0a0;
   border-color: #000 #fff #fff #000;
 }
@@ -337,8 +338,8 @@
 
 .contact-line img 
 {
-  width:  80px;
-  height: 80px;
+  width:  90px;
+  height: 90px;
 }
 
 .link-text
