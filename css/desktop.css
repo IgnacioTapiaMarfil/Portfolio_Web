@@ -81,8 +81,8 @@
 .taskbar-menu
 {
     position: fixed;
-    bottom: 3.125rem; /* 50px */
-    left: 0.625rem;   /* 10px */
+    bottom: 6.5vh; /* 50px */
+    left: 2vw;   /* 10px */
     background: #8d8d8d;
     border: 0.125rem solid #000; /* 2px */
     border-top-color: #fff;
@@ -123,15 +123,15 @@
 
 .taskbar .start-button span
 {
-    font-size: 0.75rem;      /* 12px */
+    font-size: 1.5vh;     /* 12px */
     padding: 0 0.1875rem;    /* 0px 3px */
 }
 
 .taskbar .start-button img
 {
     padding: 0 -0.75rem;     /* 0px -12px */
-    width: 2.1875rem;        /* 35px */
-    height: 2.1875rem;       /* 35px */
+    width: 5vh;        /* 35px */
+    height: auto;       /* 35px */
 }
   
 .taskbar-items 
@@ -141,14 +141,16 @@
     display: flex;
     gap: 0.5rem;            /* 8px */
 }
+
 .desktop-name
 {
     position: fixed;
     bottom: 0;
     left: 1;
     right: 0;
-    margin-bottom: 1rem;
-    margin-right: 2rem;
+    font-size: 2vh;
+    margin-bottom: 1.4%;
+    margin-right: 2.4%;
     z-index: 1000;
     user-select: none;
 }
