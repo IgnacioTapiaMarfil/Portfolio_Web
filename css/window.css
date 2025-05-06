@@ -317,7 +317,9 @@
   flex-direction: column;
   align-items: center;
   width: 80%;
-  height: auto;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
   gap: 1.5rem;
 }
 
@@ -347,4 +349,25 @@
 .link-text span 
 {
   align-self: center;
+}
+
+.contact-content::-webkit-scrollbar {
+  width: 1vw;
+}
+
+.contact-content::-webkit-scrollbar-track {
+  background: #d0d0d0;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+  border-radius: 0;
+}
+
+.contact-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 0;
+  border: 0.0625rem solid #d0d0d0;
+}
+
+.contact-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
