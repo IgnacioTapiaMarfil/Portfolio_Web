@@ -6,8 +6,8 @@
   
 .icon 
 {
-    margin-top: 6.25rem; /* 100px */
-    margin-left: 6.25rem; /* 100px */
+    margin-top: 10vh; /* 100px */
+    margin-left: 6vw; /* 100px */
     text-align: center;
     color: white;
     cursor: pointer;
@@ -39,8 +39,8 @@
 
 .icon img
 {
-    width: 9.375rem;  /* 150px */
-    height: 9.375rem; /* 150px */
+    width: 12vw;
+    height: 22vh;
 }
 
 .taskbar 
@@ -49,13 +49,13 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 3.125rem; /* 50px */
+    height: 7vh;
     background: silver;
-    border-top: 0.125rem solid #ffffff;   /* 2px */
-    border-bottom: 0.125rem solid #000000; /* 2px */
+    border-top: 0.125rem solid #ffffff;
+    border-bottom: 0.125rem solid #000000;
     display: flex;
     align-items: center;
-    padding: 0 1.25rem; /* 20px */
+    padding: 0 1.25rem;
     z-index: 1000;
 }
   
@@ -140,4 +140,15 @@
     margin-left: 0.625rem; /* 10px */
     display: flex;
     gap: 0.5rem;            /* 8px */
+}
+.desktop-name
+{
+    position: fixed;
+    bottom: 0;
+    left: 1;
+    right: 0;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+    z-index: 1000;
+    user-select: none;
 }
