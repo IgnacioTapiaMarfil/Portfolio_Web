@@ -538,7 +538,7 @@
             <!-- Español -->
             <div data-lang="es">
               <h3>Descripción<br>--------------------------</h3>
-              <p>Juego realizado con C++ en Unreal Engine 5.4.</p>
+              <p>Juego realizado en Godot.</p>
 
               <h3>Cargos<br>--------------------------</h3>
               <p>
@@ -548,15 +548,15 @@
               <h3>Estado actual<br>--------------------------</h3>
               <p>
                 Actualmente contamos con una demo inicial del juego,<br>
-                con la cual asistimos al CyL InGame 2025.<br>
-                <a href="https://arrecifegames.itch.io/zep-demo-for-cyl-games-show-boss-fight-prototype" target="_blank" rel="noopener noreferrer" class="link-button">ZEP Demo</a>
+                con la cual ganamos el premio a mejor juego Universitario 2025.<br>
+                <a href="https://arrecifegames.itch.io/demo-zep-match-in-games" target="_blank" rel="noopener noreferrer" class="link-button">ZEP Demo</a>
               </p>
             </div>
 
             <!-- Inglés -->
             <div data-lang="en" style="display: none;">
               <h3>Description<br>--------------------------</h3>
-              <p>Game developed in C++ using Unreal Engine 5.4.</p>
+              <p>Game developed in Godot.</p>
 
               <h3>Roles<br>--------------------------</h3>
               <p>
@@ -566,8 +566,8 @@
               <h3>Current status<br>--------------------------</h3>
               <p>
                 We currently have an initial demo of the game,<br>
-                which we showcased at CyL InGame 2025.<br>
-                <a href="https://arrecifegames.itch.io/zep-demo-for-cyl-games-show-boss-fight-prototype" target="_blank" rel="noopener noreferrer" class="link-button">ZEP Demo</a>
+                with which we won the Best University Game 2025 award.<br>
+                <a href="https://arrecifegames.itch.io/demo-zep-match-in-games" target="_blank" rel="noopener noreferrer" class="link-button">ZEP Demo</a>
               </p>
             </div>
           </div>
@@ -585,29 +585,29 @@
         <div class="project-line"> 
           <div class="project-text">
             <div data-lang="es">
-              <h3>Sistema de Diálogos<br>----------------------------------</h3>
+              <h3>Sistema de Interacciones<br>----------------------------------</h3>
               <p>
-                Sistema de diálogos con Structs y DataTables. Cada NPC tiene estados distintos según tus interacciones y el progreso del juego.
+                El sistema de interaciones de ZEP controla desde el lanzamiento de los dialogos hasta la tienda o el puerto.
               </p>
               <p>
-                El componente de diálogo lanza el texto adecuado según los medidores enviados como strings.
+                Esto me ayuda a controlar de manera cómoda y eficiente la activación o desactivación de estas interacciones a lo largo del juego.
               </p>
               <p>
-                Este sistema es reutilizable con solo configurar los datos, ideal para otros objetos o NPCs.
+                Despues cosas como los diálogos son recursos reutilizables que se añadena los NPC y se lanzan desde su interaccion determinada.
               </p>
             </div>
 
             <div data-lang="en" style="display: none;">
-              <h3>Dialogue System<br>----------------------------------</h3>
-              <p>
-                Dialogue system built from scratch using Structs and DataTables. NPCs change based on interaction history and game phase.
-              </p>
-              <p>
-                The Dialogue Component sends strings with meter values and retrieves the correct dialogue from the DataTable.
-              </p>
-              <p>
-                This makes the system easily reusable for any object or NPC with simple data configuration.
-              </p>
+              <h3>Interaction System<br>----------------------------------</h3>
+                <p>
+                  ZEP’s interaction system controls everything from triggering dialogues to accessing the shop or the port.
+                </p>
+                <p>
+                  This helps me conveniently and efficiently manage the activation or deactivation of these interactions throughout the game.
+                </p>
+                <p>
+                  Later on, elements like dialogues are reusable resources that are added to NPCs and triggered from their specific interaction.
+                </p>
             </div>
           </div>
         </div>
@@ -643,27 +643,27 @@
             <div data-lang="es">
               <h3>Objetos<br>----------------------------------</h3>
               <p>
-                Sistema de objetos basado en Structs con un struct general que engloba structs específicos.
+                Sistema de objetos basado en resources que cada tipo hereda de un resource general.
               </p>
               <p>
-                Ampliable fácilmente: basta con crear un nuevo struct y añadirlo.
+                Ampliable fácilmente: basta con crear un nuevo resource y añadirlo.
               </p>
               <p>
-                Se almacenan en una DataTable con IDs únicos para fácil acceso.
+                Se almacenan en un manager con IDs únicos para fácil acceso.
               </p>
             </div>
 
             <div data-lang="en" style="display: none;">
               <h3>Items<br>----------------------------------</h3>
-              <p>
-                Item system based on Structs: a general struct contains all common info plus a specific-type struct.
-              </p>
-              <p>
-                Easily expandable by adding new type structs.
-              </p>
-              <p>
-                Items are stored in a DataTable with unique IDs for easy lookup.
-              </p>
+                <p>
+                  Item system based on resources, where each type inherits from a general resource.
+                </p>
+                <p>
+                  Easily extensible: just create a new resource and add it.
+                </p>
+                <p>
+                  They are stored in a manager with unique IDs for easy access.
+                </p>
             </div>
           </div>
         </div>
