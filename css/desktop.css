@@ -1,5 +1,6 @@
 .desktop 
 {
+    --taskbar-height: 3.2rem;
     display: flex;
     align-items: flex-start;
 }
@@ -52,7 +53,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 7vh;
+    height: var(--taskbar-height);
     background: silver;
     border-top: 0.125rem solid #ffffff;
     border-bottom: 0.125rem solid #000000;
@@ -60,6 +61,7 @@
     align-items: center;
     justify-content: flex-start;
     padding: 0 1.25rem;
+    padding-bottom: env(safe-area-inset-bottom);
     z-index: 1000;
 }
   
@@ -86,7 +88,7 @@
 .taskbar-menu
 {
     position: fixed;
-    bottom: 6.5vh; /* 50px */
+    bottom: calc(var(--taskbar-height) + env(safe-area-inset-bottom));
     left: 2vw;   /* 10px */
     background: #8d8d8d;
     border: 0.125rem solid #000; /* 2px */
@@ -128,14 +130,14 @@
 
 .taskbar .start-button span
 {
-    font-size: 1.5vh;     /* 12px */
+    font-size: 0.75rem;
     padding: 0 0.1875rem;    /* 0px 3px */
 }
 
 .taskbar .start-button img
 {
-    width: 5vh;        /* 35px */
-    height: auto;       /* 35px */
+    width: 1.6rem;
+    height: auto;
 }
   
 .taskbar-items 
@@ -151,8 +153,8 @@
     position: fixed;
     bottom: 0;
     right: 2.4%;
-    font-size: 2vh;
-    margin-bottom: 1.4%;
+    font-size: 0.75rem;
+    margin-bottom: 0.9rem;
     z-index: 1000;
     user-select: none;
     text-align: right;
@@ -182,6 +184,11 @@
 
 @media (max-width: 1024px) and (orientation: landscape)
 {
+    .desktop
+    {
+        --taskbar-height: 2.7rem;
+    }
+
     .icon
     {
         margin-top: 0.85rem;
@@ -195,7 +202,6 @@
 
     .taskbar
     {
-        height: 2.9rem;
         padding: 0 0.5rem;
     }
 
@@ -216,7 +222,7 @@
 
     .taskbar-menu
     {
-        bottom: 2.9rem;
+        bottom: calc(var(--taskbar-height) + env(safe-area-inset-bottom));
     }
 
     .taskbar-menu-items .menu-item,

@@ -49,6 +49,25 @@ function shouldStartDrag(event)
   return !target.closest('.close-button');
 }
 
+function updateProjectHeadingDividers()
+{
+  const compactDivider = '----------';
+  const isCompact = isCompactLandscape();
+
+  document.querySelectorAll('.project-text h3').forEach((heading) => {
+    if (!heading.dataset.originalHtml)
+      heading.dataset.originalHtml = heading.innerHTML;
+
+    if (isCompact)
+    {
+      heading.innerHTML = heading.dataset.originalHtml.replace(/-{10,}/g, compactDivider);
+      return;
+    }
+
+    heading.innerHTML = heading.dataset.originalHtml;
+  });
+}
+
 function registerTouchActiveFeedback()
 {
   const activeSelectors = '.icon, .start-button, .close-button, .tabs-button button, .arrow, .link-button, .menu-item, .first-menu-item';
@@ -183,6 +202,7 @@ function bring_front(window)
 
 document.addEventListener('DOMContentLoaded', () => {
   registerTouchActiveFeedback();
+  updateProjectHeadingDividers();
 
   document.querySelectorAll('.window-header').forEach((header) => {
     header.addEventListener('touchstart', (event) => {
@@ -210,3 +230,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+window.addEventListener('resize', updateProjectHeadingDividers);
