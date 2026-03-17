@@ -1,8 +1,9 @@
 .window 
 {
   position: absolute;
-  top: 10%;
-  left: 20%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 58vw;
   height: 80vh;
   background: silver;
@@ -32,6 +33,11 @@
   border-left-color: #fff;
   cursor: pointer;
   user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.4rem;
 }
 
 .close-button:hover 
@@ -51,10 +57,11 @@
 .close-button span 
 {
   display: flex;
-  margin-top: 0.1875rem;
-  margin-left: 0.1875rem;
-  font-size: 125%;
+  align-items: center;
+  justify-content: center;
+  font-size: 110%;
   color: #e64e4e;
+  line-height: 1;
 }
 
 .window-content 
@@ -409,18 +416,16 @@
   .window
   {
     position: fixed;
-    top: 2vh !important;
-    left: 10vw !important;
-    width: min(80vw, calc((100dvh - var(--taskbar-height, 2.7rem) - 1.1rem) * 1.1)) !important;
-    height: min(80dvh, calc(100dvh - var(--taskbar-height, 2.7rem) - 1.1rem)) !important;
+    width: min(91vw, calc((100dvh - var(--taskbar-height, 2.7rem) - 1.1rem) * 1.55)) !important;
+    height: min(84dvh, calc(100dvh - var(--taskbar-height, 2.7rem) - 1.1rem)) !important;
     max-height: calc(100dvh - var(--taskbar-height, 2.7rem) - 1.1rem) !important;
     box-shadow: 0.3rem 0.3rem 0 rgba(0, 0, 0, 0.65);
   }
 
   #game_window
   {
-    width: min(80vw, calc((100dvh - var(--taskbar-height, 2.7rem) - 1.1rem) * 1.1)) !important;
-    height: min(80dvh, calc(100dvh - var(--taskbar-height, 2.7rem) - 1.1rem)) !important;
+    width: min(91vw, calc((100dvh - var(--taskbar-height, 2.7rem) - 1.1rem) * 1.55)) !important;
+    height: min(84dvh, calc(100dvh - var(--taskbar-height, 2.7rem) - 1.1rem)) !important;
     max-height: calc(100dvh - var(--taskbar-height, 2.7rem) - 1.1rem) !important;
   }
 

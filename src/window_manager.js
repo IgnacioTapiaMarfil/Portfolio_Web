@@ -103,7 +103,10 @@ function open_window(windowId)
   if (isCompactLandscape())
     hideOtherWindows(windowId);
 
-  windowElement.style.display = "block";
+  windowElement.style.transform = '';
+  windowElement.style.left      = '';
+  windowElement.style.top       = '';
+  windowElement.style.display   = "block";
   bring_front(windowId);
 
   if(windowId == "game_window")
@@ -148,8 +151,15 @@ function start_draging(event, windowElement)
 
     draggedWindow = windowElement;
 
-    offsetX = pointer.clientX - windowElement.offsetLeft;
-    offsetY = pointer.clientY - windowElement.offsetTop;
+    const rect = windowElement.getBoundingClientRect();
+
+    // Neutralize CSS centering transform so subsequent left/top assignments work correctly
+    windowElement.style.transform = 'none';
+    windowElement.style.left = rect.left + 'px';
+    windowElement.style.top  = rect.top  + 'px';
+
+    offsetX = pointer.clientX - rect.left;
+    offsetY = pointer.clientY - rect.top;
     
     document.addEventListener('mousemove', move_window);
     document.addEventListener('mouseup', stop_draging);
