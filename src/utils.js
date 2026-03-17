@@ -34,7 +34,7 @@ function CheckCollisionRect (point, rectangle) {
 }
 
 function CheckCollisionPolygon(point, polygon) {
-    var count = polygon.length;
+    let count = polygon.length;
 
     for (let i = 0; i < polygon.length; i++) {
         const d = DistancePointToSegmentSign(polygon[i], polygon[(i + 1) % polygon.length], point);
@@ -58,7 +58,7 @@ function CheckCollision2Rects(rect1, rect2)
 function DistancePointToSegment(A, B, p) {
     const difXAB = A.x - B.x;
     const difYAB = A.y - B.y;
-    return (((B.x - A.x) * (A.y - p.y)) - ((A.x - p.x) * (B.y - A.y))) / (Math.sqrt(difXAB * difXAB) + (difYAB * difYAB));
+    return (((B.x - A.x) * (A.y - p.y)) - ((A.x - p.x) * (B.y - A.y))) / Math.sqrt((difXAB * difXAB) + (difYAB * difYAB));
 }
 
 function DistancePointToSegmentSign(A, B, p) {
@@ -149,7 +149,7 @@ class Vector2
     }
 
     static Magnitude(v1, v2) {
-        return Math.sqrt(SqrMagnitude(v1, v2));
+        return Math.sqrt(Vector2.SqrMagnitude(v1, v2));
     }
 
     static SqrMagnitude(v1, v2) {
@@ -169,18 +169,24 @@ class Vector2
             this.x = this.x / length;
             this.y = this.y / length;
         }
+
+        return this;
     }
 
     Add(otherVector)
     {
         this.x += otherVector.x;
         this.y += otherVector.y;
+
+        return this;
     }
 
     Sub(otherVector)
     {
         this.x -= otherVector.x;
         this.y -= otherVector.y;
+
+        return this;
     }
 
     DotProduct(otherVector)
@@ -192,6 +198,8 @@ class Vector2
     {
         this.x *= scalar;
         this.y *= scalar;
+
+        return this;
     }
 
     static Copy(vector)
@@ -225,9 +233,9 @@ class Vector2
 
     static Lerp(v1, v2, speed)
     {
-        const v1Angle = Math.atan2(v2.y, v2.x);
-        const desiredDir = new Vector2(v2.x, v2.y).Sub(v1).Normalize();
-        const currentDir = new Vector2(v2.x, v2.y).Normalize();
-        currentDir += (desiredDir - currentDir) * speed;
+        return new Vector2(
+            v1.x + (v2.x - v1.x) * speed,
+            v1.y + (v2.y - v1.y) * speed
+        );
     }
 }

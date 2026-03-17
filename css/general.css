@@ -6,3 +6,48 @@ html, body
     overflow: hidden;
     margin: 0;
 }
+
+.rotate-message
+{
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #008080;
+    z-index: 4000;
+}
+
+.rotate-message-box
+{
+    max-width: 28rem;
+    background: #c0c0c0;
+    border: 0.1875rem solid #000;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    color: #000;
+    text-align: center;
+    line-height: 1.5;
+    padding: 1.25rem;
+}
+
+@media (max-width: 1024px) and (orientation: portrait)
+{
+    .desktop,
+    .window
+    {
+        display: none !important;
+    }
+
+    .rotate-message
+    {
+        display: flex;
+    }
+
+    html,
+    body
+    {
+        overflow: hidden;
+    }
+}

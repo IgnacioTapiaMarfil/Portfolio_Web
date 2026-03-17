@@ -13,6 +13,8 @@ let currentSlide = 0;
 function change_slide(direction) 
 {
   const images = document.querySelectorAll('#tab1 .carousel-image');
+  if (!images.length) return;
+
   images[currentSlide].classList.remove('active');
   currentSlide = (currentSlide + direction + images.length) % images.length;
   images[currentSlide].classList.add('active');

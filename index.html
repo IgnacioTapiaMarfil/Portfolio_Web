@@ -17,16 +17,23 @@
 </head>
 
 <body>
-  <div class = "desktop">
-    <div class = "icon" id="portfolio_icon" onclick = "open_window('portfolio_window'), show_tab(0)">
+  <div class="rotate-message">
+    <div class="rotate-message-box">
+      <span data-lang="es">Gira el movil para ver la web en horizontal.</span>
+      <span data-lang="en" style="display: none;">Rotate your phone to view this website in landscape.</span>
+    </div>
+  </div>
+
+  <div class="desktop">
+    <div class="icon" onclick="open_window('portfolio_window'); show_tab(0)">
         <img src="resources/AboutMe.png">
         <span>About</span>
     </div>
-    <div class = "icon" id="portfolio_icon" onclick = "open_window('portfolio_window'), show_tab(1)">
+    <div class="icon" onclick="open_window('portfolio_window'); show_tab(1)">
       <img src="resources/Projects.png">
       <span>Games</span>
     </div>  
-    <div class = "icon" id="portfolio_icon" onclick = "open_window('portfolio_window'), show_tab(2)">
+    <div class="icon" onclick="open_window('portfolio_window'); show_tab(2)">
       <img src="resources/Contact.png">
       <span>Contact</span>
     </div> 
@@ -41,16 +48,16 @@
 
     <div class="taskbar-menu" id="start_menu" style="display: none;">
       <div class="taskbar-menu-items">
-        <div class="menu-item" onclick = "open_window('portfolio_window'), show_tab(2)">Contact</div>
-        <div class="menu-item" onclick = "open_window('portfolio_window'), show_tab(1)">Games</div>  
-        <div class="first-menu-item" onclick = "open_window('portfolio_window'), show_tab(0)">About me</div>
+        <div class="menu-item" onclick="open_window('portfolio_window'); show_tab(2)">Contact</div>
+        <div class="menu-item" onclick="open_window('portfolio_window'); show_tab(1)">Games</div>  
+        <div class="first-menu-item" onclick="open_window('portfolio_window'); show_tab(0)">About me</div>
       </div>
     </div>
     <div class="desktop-name">
       <span>Ignacio Tapia</span>
     </div>
 
-    <div class="leng-button"  onclick = "setLanguage()">
+    <div class="leng-button" onclick="setLanguage()">
       <img src="resources/Bandera_España.png" alt="bandera"  data-lang="es"/>
       <img src="resources/Bandera_Inglaterra.png" alt="bandera"  data-lang="en" style="display: none;"/>
     </div>
@@ -58,7 +65,7 @@
   </div>
 
   <div class="window" id="portfolio_window" style="display: none;" onmousedown="bring_front('portfolio_window')">
-      <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
+      <div class="window-header" onmousedown="start_draging(event, this.parentElement)">
           <span>&lt;NT&gt;</span>
 
           <div class="close-button" onclick="close_window(this)">
@@ -148,8 +155,8 @@
                 <img src="resources/BlaseterCannon.png" />
                 <div class="overlay-text">Blaseter Cannon</div>
               </div>
-              <div class="carousel-image">
-                <img src="resources/Another.png" onclick="open_window('other_window')">
+              <div class="carousel-image" onclick="open_window('other_window')">
+                <img src="resources/Another.png">
                 <div class="overlay-text"><span data-lang="es">Otros Proyectos y Códigos</span> <span data-lang="en" style="display: none;">Other proyects and codes</span></div>
               </div>
             </div>
@@ -180,7 +187,7 @@
   </div>
 
   <div class="window" id="TheMiau_window" style="display: none; top: 11%; left: 21%;" onmousedown="bring_front('TheMiau_window')">
-    <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
+    <div class="window-header" onmousedown="start_draging(event, this.parentElement)">
       <span>TheMiaTheMiauAndTheMiau</span>
   
       <div class="close-button" onclick="close_window(this)">
@@ -265,7 +272,7 @@
   </div>
 
   <div class="window" id="Tiny_window" style="display: none; top: 12%; left: 22%;" onmousedown="bring_front('Tiny_window')"> 
-    <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
+    <div class="window-header" onmousedown="start_draging(event, this.parentElement)">
       <span>TinyPocket</span>
   
       <div class="close-button" onclick="close_window(this)">
@@ -350,7 +357,7 @@
   </div>
 
   <div class="window" id="Dignity_window" style="display: none; top: 13%; left: 23%;" onmousedown="bring_front('Dignity_window')">
-  <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
+  <div class="window-header" onmousedown="start_draging(event, this.parentElement)">
     <span>DignityPong</span>
 
     <div class="close-button" onclick="close_window(this)">
@@ -434,7 +441,7 @@
 </div>
 
 <div class="window" id="Choi_window" style="display: none; top: 14%; left: 24%;" onmousedown="bring_front('Choi_window')">
-  <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
+  <div class="window-header" onmousedown="start_draging(event, this.parentElement)">
     <span>FrancrazeSimulator</span>
 
     <div class="close-button" onclick="close_window(this)">
@@ -519,7 +526,7 @@
 </div>
 
 <div class="window" id="zep_window" style="display: none; top: 15%; left: 25%;" onmousedown="bring_front('zep_window')">
-  <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
+  <div class="window-header" onmousedown="start_draging(event, this.parentElement)">
     <span>ZEP</span>
     <div class="close-button" onclick="close_window(this)">
       <span>X</span>
@@ -704,7 +711,7 @@
 </div>
 
 <div class="window" id="cannon_window" style="display: none; top: 16%; left: 26%;" onmousedown="bring_front('cannon_window')">
-  <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
+  <div class="window-header" onmousedown="start_draging(event, this.parentElement)">
       <span>BlasterCannon</span>
 
       <div class="close-button" onclick="close_window(this)">
@@ -841,10 +848,9 @@
     </div>
   </div>
 </div>
-</div>
 
 <div class="window" id="other_window" style="display: none; top: 17%; left: 27%;" onmousedown="bring_front('other_window')">
-  <div class="window-header" id="header1" onmousedown="start_draging(event, this.parentElement)">
+  <div class="window-header" onmousedown="start_draging(event, this.parentElement)">
     <span>Other</span>
     <div class="close-button" onclick="close_window(this)">
       <span>X</span>
@@ -900,12 +906,12 @@
     </div>
   </div>
 
-  <script src="src/window_manager.js"></script>
-  <script src="src/aboutme_manager.js"></script>
-  <script src="src/game_manager.js"></script>
-  <script src="src/jump_game.js"></script>
-  <script src="src/input.js"></script>
   <script src="src/utils.js"></script>
+  <script src="src/input.js"></script>
+  <script src="src/jump_game.js"></script>
+  <script src="src/game_manager.js"></script>
+  <script src="src/aboutme_manager.js"></script>
+  <script src="src/window_manager.js"></script>
   
 </body>
 </html>

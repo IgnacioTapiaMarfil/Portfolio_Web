@@ -13,16 +13,17 @@ class Game
 {
   constructor()
   {
-    this.Player = null;
-    this.Obstacles = [];
+    this.player = null;
+    this.obstacles = [];
 
-    this.MaxObstaclesTime = 3;
-    this.MinObstaclesTime = 1;
+    this.maxObstaclesTime = 3;
+    this.minObstaclesTime = 1;
 
-    this.ObtaclesTimer = 0;
-    this.ObstaclesTimerIndex = 0;
+    this.obstacleTimer = 0;
+    this.obstaclesTimerIndex = 0;
 
     this.running = false;
+    this.animationFrameId = null;
   }
 
   start()
@@ -36,7 +37,7 @@ class Game
 
     this.running = true;
     
-    this.ObtaclesTimer = RandomBetweenFloat(this.MinObstaclesTime, this.MaxObstaclesTime);
+    this.obstacleTimer = RandomBetweenFloat(this.minObstaclesTime, this.maxObstaclesTime);
 
     this.update();
   }
@@ -44,6 +45,12 @@ class Game
   stop()
   {
     this.running = false;
+
+    if (this.animationFrameId)
+    {
+      cancelAnimationFrame(this.animationFrameId);
+      this.animationFrameId = null;
+    }
   }
 
   update()
@@ -52,35 +59,40 @@ class Game
 
     this.player.update();
 
-    if(this.ObstaclesTimerIndex <= this.ObtaclesTimer)
+    if(this.obstaclesTimerIndex <= this.obstacleTimer)
     {
-      this.ObstaclesTimerIndex += 0.02;
+      this.obstaclesTimerIndex += 0.02;
     }
     else
     {
-      console.log("crado")
-      this.Obstacles.push(new Obstacles(new Vector2(canvas.width, canvas.height-50)))
-      this.ObtaclesTimer = RandomBetweenFloat(this.MinObstaclesTime, this.MaxObstaclesTime);
-      this.ObstaclesTimerIndex = 0;
+      this.obstacles.push(new Obstacle(new Vector2(canvas.width, canvas.height-50)));
+      this.obstacleTimer = RandomBetweenFloat(this.minObstaclesTime, this.maxObstaclesTime);
+      this.obstaclesTimerIndex = 0;
     }
 
-    for(let obstacle of this.Obstacles)
+    for (let i = this.obstacles.length - 1; i >= 0; i--)
     {
+      const obstacle = this.obstacles[i];
       obstacle.update();
+
+      if (obstacle.position.x + obstacle.boundingWidth < 0)
+      {
+        this.obstacles.splice(i, 1);
+        continue;
+      }
 
       if (CheckCollision2Rects(this.player.getCollider(), obstacle.getCollider())) 
       {
-        console.log("¡Colisión!");
         this.stop();
+        break;
       }
-
     }
 
     this.draw(ctx);
 
     Input.PostUpdate();
 
-    requestAnimationFrame(this.update.bind(this));
+    this.animationFrameId = requestAnimationFrame(this.update.bind(this));
   }
 
   draw(ctx)
@@ -89,7 +101,7 @@ class Game
 
     this.player.draw(ctx);
 
-    for(let obstacle of this.Obstacles)
+    for(let obstacle of this.obstacles)
     {
       obstacle.draw(ctx);
     }
@@ -185,7 +197,7 @@ class Player
   }
 }
 
-class Obstacles
+class Obstacle
 {
   constructor(position)
   {
@@ -227,7 +239,7 @@ class Obstacles
     }
 
     const collider = this.getCollider();
-    ctx.strokeStyle = "grean";
+    ctx.strokeStyle = "green";
     ctx.strokeRect(collider.x, collider.y, collider.width, collider.height);
   }
 }
